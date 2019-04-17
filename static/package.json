@@ -3,5 +3,5 @@
   "version": "1.0.0",
   "description": "scratch",
   "author": "Troy",
-  "main": "./scratch.js"
+  "main": "./index.js"
 }
