@@ -6,6 +6,8 @@ import KeyBoard from '../keyboard/keyboard.jsx';
 import MonitorList from './monitor/containers/monitor-list.jsx';
 import ConnectedIntlProvider from '@/lib/connected-intl-provider.jsx';
 import imgPlayBtn from './images/btn_play.png';
+import { Provider } from 'react-redux';
+import redux from './store';
 
 const ratio = 0.75;
 let submiting = false;
@@ -108,43 +110,45 @@ class Player extends Component {
     this.playerVm.canvas.style.cssText = Style.string({ width: stageSize.width, height: stageSize.height });
 
     return (
-      <div className={isPlay ? styles.fullscreen : styles.container}>
-        <div className={styles.playerContainer}>
-          <div className={styles.canvasCon} ref={this.setCanvasRef}>
-            <ConnectedIntlProvider>
-              <MonitorList
-                draggable={false}
-                stageSize={stageSize}
-                monitors={monitors}
-                vm={this.playerVm ? this.playerVm.vm : {}}
-              />
-            </ConnectedIntlProvider>
+      <Provider store={redux}>
+        <div className={isPlay ? styles.fullscreen : styles.container}>
+          <div className={styles.playerContainer}>
+            <div className={styles.canvasCon} ref={this.setCanvasRef}>
+              <ConnectedIntlProvider>
+                <MonitorList
+                  draggable={false}
+                  stageSize={stageSize}
+                  monitors={monitors}
+                  vm={this.playerVm ? this.playerVm.vm : {}}
+                />
+              </ConnectedIntlProvider>
 
-            {!isLoadProject && (
-              <React.Fragment>
-                <div className={styles.projectImg} style={{ backgroundImage: `url(${data._coverUrl})` }} />
-                <div className={styles.playBtn}>
-                  <img src={imgPlayBtn} onClick={this.playGame} />
-                </div>
-              </React.Fragment>
-            )}
-          </div>
+              {!isLoadProject && (
+                <React.Fragment>
+                  <div className={styles.projectImg} style={{ backgroundImage: `url(${data._coverUrl})` }} />
+                  <div className={styles.playBtn}>
+                    <img src={imgPlayBtn} onClick={this.playGame} />
+                  </div>
+                </React.Fragment>
+              )}
+            </div>
 
-          <div className={styles.btnRow}>
-            <div className={styles.btnCon} style={{ width: `${stageSize.width}px` }}>
-              <svg className={`${styles.startBtn} icon`} aria-hidden="true" onClick={this.playGame}>
-                <use xlinkHref="#icon_detail_flagx" />
-              </svg>
+            <div className={styles.btnRow}>
+              <div className={styles.btnCon} style={{ width: `${stageSize.width}px` }}>
+                <svg className={`${styles.startBtn} icon`} aria-hidden="true" onClick={this.playGame}>
+                  <use xlinkHref="#icon_detail_flagx" />
+                </svg>
 
-              <svg className={`${styles.stopBtn} icon`} aria-hidden="true" onClick={this.stopGame}>
-                <use xlinkHref="#icon_detail_stopx" />
-              </svg>
+                <svg className={`${styles.stopBtn} icon`} aria-hidden="true" onClick={this.stopGame}>
+                  <use xlinkHref="#icon_detail_stopx" />
+                </svg>
+              </div>
             </div>
           </div>
-        </div>
 
-        <KeyBoard visible={isPlay} vm={this.playerVm.vm} />
-      </div>
+          <KeyBoard visible={isPlay} vm={this.playerVm.vm} />
+        </div>
+      </Provider>
     );
   }
 }
