@@ -25,6 +25,9 @@ class Player extends Component {
     isLoadProject: false,
     isPlay: false,
     monitors: {},
+
+    playerConStyle: {},
+    canvasConStyle: {},
     stageSize: {
       widthDefault: 480,
       heightDefault: 320,
@@ -96,18 +99,73 @@ class Player extends Component {
     } else {
       this.loadProject();
     }
+
+    this.calculateStageSize();
   };
 
   // 停止游戏
   stopGame = () => {
     this.playerVm.vm.stopAll();
-    this.setState({ isPlay: false });
+    this.setState({
+      isPlay: false,
+      stageSize: {
+        widthDefault: 480,
+        heightDefault: 320,
+        width: window.innerWidth,
+        height: window.innerWidth * ratio,
+        scale: window.innerWidth / 480
+      }
+    });
     document.removeEventListener('touchmove', preventTouchMove);
   };
 
+  // 计算舞台大小
+  calculateStageSize() {
+    let screenWidth = window.innerWidth;
+    let screenHeight = window.innerHeight;
+    let rem = (screenWidth / 375) * 100;
+    let stageConBottom = 200 + 0.78 * rem;
+    let stageConHeight = screenHeight - stageConBottom;
+
+    if (screenWidth * 0.75 > stageConHeight) {
+      this.setState({
+        playerConStyle: {
+          bottom: stageConBottom + 'px'
+        },
+        canvasConStyle: {
+          width: 'auto',
+          height: '100%'
+        },
+        stageSize: {
+          widthDefault: 480,
+          heightDefault: 320,
+          width: stageConHeight / 0.75,
+          height: stageConHeight,
+          scale: stageConHeight / 320
+        }
+      });
+    } else {
+      this.setState({
+        playerConStyle: {
+          bottom: stageConBottom + 'px'
+        },
+        canvasConStyle: {
+          width: '100%'
+        },
+        stageSize: {
+          widthDefault: 480,
+          heightDefault: 320,
+          width: window.innerWidth,
+          height: window.innerWidth * 0.75,
+          scale: window.innerWidth / 480
+        }
+      });
+    }
+  }
+
   render() {
     const { data } = this.props;
-    const { loading, stageSize, isLoadProject, isPlay, monitors } = this.state;
+    const { loading, stageSize, isLoadProject, isPlay, monitors, playerConStyle, canvasConStyle } = this.state;
 
     this.playerVm.canvas.style.cssText = Style.string({ width: stageSize.width, height: stageSize.height });
 
@@ -115,8 +173,8 @@ class Player extends Component {
       <Provider store={redux}>
         <div className={isPlay ? styles.fullscreen : styles.container}>
           <Spin spinning={loading} style={{ overflow: 'hidden' }}>
-            <div className={styles.playerContainer}>
-              <div className={styles.canvasCon} ref={this.setCanvasRef}>
+            <div className={styles.playerContainer} style={isPlay ? playerConStyle : {}}>
+              <div className={styles.canvasCon} ref={this.setCanvasRef} style={isPlay ? canvasConStyle : {}}>
                 <ConnectedIntlProvider>
                   <MonitorList
                     draggable={false}
