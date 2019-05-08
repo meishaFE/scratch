@@ -7,13 +7,10 @@
     "build": "webpack --inline --progress --config build/webpack.prod.conf.js",
     "release": "git subtree push --prefix=dist origin master"
   },
-  "author": "Troy",
-  "private": true,
-  "peerDependencies": {
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0"
-  },
-  "dependencies": {
+  "author": "wawjqyh",
+  "license": "ISC",
+  "main": "dist/index.js",
+  "devDependencies": {
     "@babel/polyfill": "^7.0.0",
     "antd": "^3.13.3",
     "axios": "^0.18.0",
@@ -26,9 +23,7 @@
     "react-router-dom": "^4.3.1",
     "store": "^2.0.12",
     "type-detect": "^4.0.8",
-    "url-search-params": "^1.1.0"
-  },
-  "devDependencies": {
+    "url-search-params": "^1.1.0",
     "@babel/cli": "^7.1.2",
     "@babel/core": "^7.1.2",
     "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
