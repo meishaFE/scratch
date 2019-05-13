@@ -184,7 +184,7 @@ class Player extends Component {
                   />
                 </ConnectedIntlProvider>
 
-                {!isLoadProject && (
+                {!isPlay && (
                   <React.Fragment>
                     <div className={styles.projectImg} style={{ backgroundImage: `url(${data._coverUrl})` }} />
                     <div className={styles.playBtn}>
