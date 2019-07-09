@@ -8,7 +8,7 @@ const miniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin'); // 用于优化或者压缩CSS资源
 
 const webpackConfig = merge(baseWebpackConfig, {
-  mode: 'production',
+  mode: 'development',
   stats: 'errors-only',
 
   module: {

@@ -37,6 +37,7 @@ import {
 } from '../reducers/editor-tab';
 
 import {setRestore} from '../reducers/restore-deletion';
+import {showStandardAlert, closeAlertWithId} from '../reducers/alerts';
 
 class SoundTab extends React.Component {
     constructor (props) {
@@ -129,12 +130,18 @@ class SoundTab extends React.Component {
 
     handleSoundUpload (e) {
         const storage = this.props.vm.runtime.storage;
-        const handleSound = newSound => this.props.vm.addSound(newSound)
-            .then(() => this.handleNewSound());
-
-        handleFileUpload(e.target, (buffer, fileType, fileName) => {
-            soundUpload(buffer, fileType, fileName, storage, handleSound);
-        });
+        this.props.onShowImporting();
+        handleFileUpload(e.target, (buffer, fileType, fileName, fileIndex, fileCount) => {
+            soundUpload(buffer, fileType, storage, newSound => {
+                newSound.name = fileName;
+                this.props.vm.addSound(newSound).then(() => {
+                    this.handleNewSound();
+                    if (fileIndex === fileCount - 1) {
+                        this.props.onCloseImporting();
+                    }
+                });
+            });
+        }, this.props.onCloseImporting);
     }
 
     handleDrop (dropInfo) {
@@ -223,7 +230,8 @@ class SoundTab extends React.Component {
                     onClick: this.handleFileUploadClick,
                     fileAccept: '.wav, .mp3',
                     fileChange: this.handleSoundUpload,
-                    fileInput: this.setFileInput
+                    fileInput: this.setFileInput,
+                    fileMultiple: true
                 }, {
                     title: intl.formatMessage(messages.surpriseSound),
                     img: surpriseIcon,
@@ -273,9 +281,11 @@ SoundTab.propTypes = {
     intl: intlShape,
     isRtl: PropTypes.bool,
     onActivateCostumesTab: PropTypes.func.isRequired,
+    onCloseImporting: PropTypes.func.isRequired,
     onNewSoundFromLibraryClick: PropTypes.func.isRequired,
     onNewSoundFromRecordingClick: PropTypes.func.isRequired,
     onRequestCloseSoundLibrary: PropTypes.func.isRequired,
+    onShowImporting: PropTypes.func.isRequired,
     soundLibraryVisible: PropTypes.bool,
     soundRecorderVisible: PropTypes.bool,
     sprites: PropTypes.shape({
@@ -316,7 +326,9 @@ const mapDispatchToProps = dispatch => ({
     },
     dispatchUpdateRestore: restoreState => {
         dispatch(setRestore(restoreState));
-    }
+    },
+    onCloseImporting: () => dispatch(closeAlertWithId('importingAsset')),
+    onShowImporting: () => dispatch(showStandardAlert('importingAsset'))
 });
 
 export default errorBoundaryHOC('Sound Tab')(

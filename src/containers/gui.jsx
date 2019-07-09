@@ -1,15 +1,23 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { compose } from 'redux';
-import { connect } from 'react-redux';
+import {compose} from 'redux';
+import {connect} from 'react-redux';
 import ReactModal from 'react-modal';
 import VM from 'scratch-vm';
-import { defineMessages, injectIntl, intlShape } from 'react-intl';
+import {defineMessages, injectIntl, intlShape} from 'react-intl';
 
 import ErrorBoundaryHOC from '../lib/error-boundary-hoc.jsx';
-import { getIsError, getIsShowingProject } from '../reducers/project-state';
-import { setProjectTitle } from '../reducers/project-title';
-import { activateTab, BLOCKS_TAB_INDEX, COSTUMES_TAB_INDEX, SOUNDS_TAB_INDEX } from '../reducers/editor-tab';
+import {
+    getIsError,
+    getIsShowingProject
+} from '../reducers/project-state';
+import {setProjectTitle} from '../reducers/project-title';
+import {
+    activateTab,
+    BLOCKS_TAB_INDEX,
+    COSTUMES_TAB_INDEX,
+    SOUNDS_TAB_INDEX
+} from '../reducers/editor-tab';
 
 import {
     closeCostumeLibrary,
@@ -29,7 +37,7 @@ import vmManagerHOC from '../lib/vm-manager-hoc.jsx';
 import cloudManagerHOC from '../lib/cloud-manager-hoc.jsx';
 
 import GUIComponent from '../components/gui/gui.jsx';
-import { setIsScratchDesktop } from '../lib/isScratchDesktop.js';
+import {setIsScratchDesktop} from '../lib/isScratchDesktop.js';
 
 const messages = defineMessages({
     defaultProjectTitle: {
@@ -40,12 +48,13 @@ const messages = defineMessages({
 });
 
 class GUI extends React.Component {
-    componentDidMount() {
+    componentDidMount () {
         setIsScratchDesktop(this.props.isScratchDesktop);
         this.setReduxTitle(this.props.projectTitle);
         this.props.onStorageInit(storage);
+        this.props.onVmInit(this.props.vm);
     }
-    componentDidUpdate(prevProps) {
+    componentDidUpdate (prevProps) {
         if (this.props.projectId !== prevProps.projectId && this.props.projectId !== null) {
             this.props.onUpdateProjectId(this.props.projectId);
         }
@@ -58,16 +67,19 @@ class GUI extends React.Component {
             this.props.onProjectLoaded();
         }
     }
-    setReduxTitle(newTitle) {
+    setReduxTitle (newTitle) {
         if (newTitle === null || typeof newTitle === 'undefined') {
-            this.props.onUpdateReduxProjectTitle(this.props.intl.formatMessage(messages.defaultProjectTitle));
+            this.props.onUpdateReduxProjectTitle(
+                this.props.intl.formatMessage(messages.defaultProjectTitle)
+            );
         } else {
             this.props.onUpdateReduxProjectTitle(newTitle);
         }
     }
-    render() {
+    render () {
         if (this.props.isError) {
-            throw new Error(`Error in Scratch GUI [location=${window.location}]: ${this.props.error}`);
+            throw new Error(
+                `Error in Scratch GUI [location=${window.location}]: ${this.props.error}`);
         }
         const {
             /* eslint-disable no-unused-vars */
@@ -81,6 +93,7 @@ class GUI extends React.Component {
             onStorageInit,
             onUpdateProjectId,
             onUpdateReduxProjectTitle,
+            onVmInit,
             projectHost,
             projectId,
             projectTitle,
@@ -92,7 +105,10 @@ class GUI extends React.Component {
             ...componentProps
         } = this.props;
         return (
-            <GUIComponent loading={fetchingProject || isLoading || loadingStateVisible} {...componentProps}>
+            <GUIComponent
+                loading={fetchingProject || isLoading || loadingStateVisible}
+                {...componentProps}
+            >
                 {children}
             </GUIComponent>
         );
@@ -105,7 +121,6 @@ GUI.propTypes = {
     cloudHost: PropTypes.string,
     error: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
     fetchingProject: PropTypes.bool,
-    importInfoVisible: PropTypes.bool,
     intl: intlShape,
     isError: PropTypes.bool,
     isLoading: PropTypes.bool,
@@ -118,7 +133,7 @@ GUI.propTypes = {
     onUpdateProjectId: PropTypes.func,
     onUpdateProjectTitle: PropTypes.func,
     onUpdateReduxProjectTitle: PropTypes.func,
-    previewInfoVisible: PropTypes.bool,
+    onVmInit: PropTypes.func,
     projectHost: PropTypes.string,
     projectId: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     projectTitle: PropTypes.string,
@@ -130,7 +145,8 @@ GUI.defaultProps = {
     isScratchDesktop: false,
     onStorageInit: storageInstance => storageInstance.addOfficialScratchWebStores(),
     onProjectLoaded: () => {},
-    onUpdateProjectId: () => {}
+    onUpdateProjectId: () => {},
+    onVmInit: (/* vm */) => {}
 };
 
 const mapStateToProps = state => {
@@ -145,19 +161,18 @@ const mapStateToProps = state => {
         costumeLibraryVisible: state.scratchGui.modals.costumeLibrary,
         costumesTabVisible: state.scratchGui.editorTab.activeTabIndex === COSTUMES_TAB_INDEX,
         error: state.scratchGui.projectState.error,
-        importInfoVisible: state.scratchGui.modals.importInfo,
         isError: getIsError(loadingState),
         isFullScreen: state.scratchGui.mode.isFullScreen,
         isPlayerOnly: state.scratchGui.mode.isPlayerOnly,
         isRtl: state.locales.isRtl,
         isShowingProject: getIsShowingProject(loadingState),
         loadingStateVisible: state.scratchGui.modals.loadingProject,
-        previewInfoVisible: state.scratchGui.modals.previewInfo,
         projectId: state.scratchGui.projectState.projectId,
         soundsTabVisible: state.scratchGui.editorTab.activeTabIndex === SOUNDS_TAB_INDEX,
-        targetIsStage:
+        targetIsStage: (
             state.scratchGui.targets.stage &&
-            state.scratchGui.targets.stage.id === state.scratchGui.targets.editingTarget,
+            state.scratchGui.targets.stage.id === state.scratchGui.targets.editingTarget
+        ),
         telemetryModalVisible: state.scratchGui.modals.telemetryModal,
         tipsLibraryVisible: state.scratchGui.modals.tipsLibrary,
         vm: state.scratchGui.vm
@@ -175,12 +190,10 @@ const mapDispatchToProps = dispatch => ({
     onUpdateReduxProjectTitle: title => dispatch(setProjectTitle(title))
 });
 
-const ConnectedGUI = injectIntl(
-    connect(
-        mapStateToProps,
-        mapDispatchToProps
-    )(GUI)
-);
+const ConnectedGUI = injectIntl(connect(
+    mapStateToProps,
+    mapDispatchToProps,
+)(GUI));
 
 // note that redux's 'compose' function is just being used as a general utility to make
 // the hierarchy of HOC constructor calls clearer here; it has nothing to do with redux's
