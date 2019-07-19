@@ -24,10 +24,10 @@ exports.styleConfig = function(options) {
       plugins: function() {
         return [
           postcssImport,
-          postcssVars,
-          autoprefixer({
+          postcssVars
+          /* autoprefixer({
             browsers: ['last 3 versions', 'Safari >= 8', 'iOS >= 8']
-          })
+          }) */
         ];
       }
     }
@@ -38,36 +38,22 @@ exports.styleConfig = function(options) {
     return [
       {
         test: /\.css$/,
-        exclude: /node_modules[\\/]antd/, // antd的样式需要单独配置
         use: [miniCssExtractPlugin.loader, cssLoader, postcssLoader]
       },
       {
         test: /\.less$/,
-        exclude: /node_modules[\\/]antd/,
         use: [miniCssExtractPlugin.loader, cssLoader, postcssLoader, lessLoader]
-      },
-      {
-        test: /\.css$/,
-        include: /node_modules[\\/]antd/, //antd样式处理
-        use: [miniCssExtractPlugin.loader, { loader: 'css-loader', options: { importLoaders: 1 } }]
       }
     ];
   } else {
     return [
       {
         test: /\.css$/,
-        exclude: /node_modules[\\/]antd/, // antd的样式需要单独配置
         use: [styleLoader, cssLoader, postcssLoader]
       },
       {
         test: /\.less$/,
-        exclude: /node_modules[\\/]antd/,
         use: [styleLoader, cssLoader, postcssLoader, lessLoader]
-      },
-      {
-        test: /\.css$/,
-        include: /node_modules[\\/]antd/, //antd样式处理
-        use: [styleLoader, { loader: 'css-loader', options: { importLoaders: 1 } }]
       }
     ];
   }

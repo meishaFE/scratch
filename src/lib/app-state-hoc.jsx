@@ -83,6 +83,9 @@ const AppStateHOC = function (WrappedComponent, localesOnly) {
                 initialState,
                 enhancer
             );
+
+            // 将store暴露到全局
+            window.scratchStore = this.store;
         }
         componentDidUpdate (prevProps) {
             if (localesOnly) return;
