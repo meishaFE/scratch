@@ -19,7 +19,7 @@ module.exports = {
 
     // 正式发布环境下编译输出的上线路径的根路径
     // 如：publicPath: "http://cdn.example.com/
-    publicPath: '/'
+    publicPath: './'
   },
 
   resolve: {

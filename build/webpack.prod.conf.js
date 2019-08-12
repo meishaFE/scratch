@@ -39,6 +39,12 @@ const webpackConfig = merge(baseWebpackConfig, {
         context: 'node_modules/scratch-vm/dist/web'
       }
     ]),
+    new CopyWebpackPlugin([
+      {
+        from: 'dist',
+        to: '../../../mscode/node_modules/scratch'
+      }
+    ]),
 
     new webpack.NoEmitOnErrorsPlugin(),
 

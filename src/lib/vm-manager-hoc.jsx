@@ -51,28 +51,35 @@ const vmManagerHOC = function (WrappedComponent) {
                 this.props.vm.start();
             }
         }
-        loadProject () {
-            return this.props.vm.loadProject(this.props.projectData)
-                .then(() => {
-                    this.props.onLoadedProject(this.props.loadingState, this.props.canSave);
+
+        // mscode
+        // 修改了加载项目的逻辑
+        async loadProject () {
+            try {
+                // 加载缓存内的项目
+                const cacheProject = await this.props.loadCacheProject();
+                const projectContent = cacheProject ? cacheProject : this.props.projectData;
+
+                await this.props.vm.loadProject(projectContent);
+
+                this.props.onLoadedProject(this.props.loadingState, this.props.canSave);
+                // Wrap in a setTimeout because skin loading in
+                // the renderer can be async.
+                setTimeout(() => this.props.onSetProjectUnchanged());
+
+                // If the vm is not running, call draw on the renderer manually
+                // This draws the state of the loaded project with no blocks running
+                // which closely matches the 2.0 behavior, except for monitors–
+                // 2.0 runs monitors and shows updates (e.g. timer monitor)
+                // before the VM starts running other hat blocks.
+                if (!this.props.isStarted) {
                     // Wrap in a setTimeout because skin loading in
                     // the renderer can be async.
-                    setTimeout(() => this.props.onSetProjectUnchanged());
-
-                    // If the vm is not running, call draw on the renderer manually
-                    // This draws the state of the loaded project with no blocks running
-                    // which closely matches the 2.0 behavior, except for monitors–
-                    // 2.0 runs monitors and shows updates (e.g. timer monitor)
-                    // before the VM starts running other hat blocks.
-                    if (!this.props.isStarted) {
-                        // Wrap in a setTimeout because skin loading in
-                        // the renderer can be async.
-                        setTimeout(() => this.props.vm.renderer.draw());
-                    }
-                })
-                .catch(e => {
-                    this.props.onError(e);
-                });
+                    setTimeout(() => this.props.vm.renderer.draw());
+                }
+            } catch (err) {
+                this.props.onError(e);
+            }
         }
         render () {
             const {
@@ -89,6 +96,7 @@ const vmManagerHOC = function (WrappedComponent) {
                 /* eslint-enable no-unused-vars */
                 isLoadingWithId: isLoadingWithIdProp,
                 vm,
+                loadCacheProject,
                 ...componentProps
             } = this.props;
             return (

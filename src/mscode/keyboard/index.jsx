@@ -1,6 +1,6 @@
+import styles from './index.less';
 import React, { Component } from 'react';
 import { keyNum, keyLetter } from './keys';
-import styles from './keyboard.less';
 
 class Keyboard extends Component {
   handleTouchStart = e => {

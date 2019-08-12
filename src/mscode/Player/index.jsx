@@ -1,38 +1,29 @@
+import styles from './index.less';
 import React, { Component } from 'react';
 import Style from 'to-style';
 import PlayerVm from './playerVm';
-import styles from './mPlayer.less';
-import KeyBoard from '../keyboard/keyboard.jsx';
 import MonitorList from './monitor/containers/monitor-list.jsx';
 import ConnectedIntlProvider from '@/lib/connected-intl-provider.jsx';
-import imgPlayBtn from './images/btn_play.png';
 import { Provider } from 'react-redux';
 import redux from './store';
+import Spin from '../Spin';
 
 const ratio = 0.75;
 let submiting = false;
 
-function preventTouchMove(e) {
-  e.preventDefault();
-}
-
 class Player extends Component {
   state = {
     loading: false,
-    width: window.innerWidth,
-    height: window.innerWidth * ratio,
+    fullscreen: false,
     isLoadProject: false,
-    isPlay: false,
     monitors: {},
 
-    playerConStyle: {},
-    canvasConStyle: {},
     stageSize: {
       widthDefault: 480,
       heightDefault: 320,
-      width: window.innerWidth,
-      height: window.innerWidth * ratio,
-      scale: window.innerWidth / 480
+      width: 0,
+      height: 0,
+      scale: 1
     }
   };
 
@@ -42,6 +33,39 @@ class Player extends Component {
   }
 
   componentDidMount() {
+    this.setStageSize();
+    this.initVm();
+  }
+
+  // 设置播放器大小
+  setStageSize = () => {
+    if (this.state.fullscreen) {
+      const windowHeight = window.innerHeight;
+      const stageHeight = windowHeight - 48;
+      const stageWidth = stageHeight / ratio;
+      this.setState({
+        stageSize: {
+          widthDefault: 480,
+          heightDefault: 320,
+          width: stageWidth,
+          height: stageHeight,
+          scale: stageWidth / 480
+        }
+      });
+    } else {
+      this.setState({
+        stageSize: {
+          widthDefault: 480,
+          heightDefault: 320,
+          width: this.props.width,
+          height: this.props.width * ratio,
+          scale: this.props.width / 480
+        }
+      });
+    }
+  };
+
+  initVm = () => {
     this.playerVm.updateRect();
     this.canvasRef.appendChild(this.playerVm.canvas);
     this.playerVm.attachEvents(this.playerVm.canvas);
@@ -50,12 +74,11 @@ class Player extends Component {
     this.playerVm.vm.on('MONITORS_UPDATE', monitors => {
       this.setState({ monitors });
     });
-  }
+  };
 
   componentWillUnmount() {
     this.playerVm.detachEvents(this.playerVm.canvas);
     this.playerVm.vm.stopAll();
-    document.removeEventListener('touchmove', preventTouchMove);
   }
 
   componentWillUpdate() {
@@ -79,101 +102,61 @@ class Player extends Component {
 
       // 开始游戏
       this.playerVm.vm.greenFlag();
-      this.setState({ isPlay: true, isLoadProject: true });
-      document.addEventListener('touchmove', preventTouchMove, { passive: false });
+      this.setState({ isLoadProject: true });
     } catch (err) {
-      console.log(err);
+      console.error('加载作品失败');
+      console.error(err);
       $utils.errMsg(err);
     }
     this.setState({ loading: false });
     submiting = false;
   };
 
+  // 全屏/取消
+  handleFullscreen = () => {
+    this.setState({ fullscreen: !this.state.fullscreen }, () => {
+      this.setStageSize();
+    });
+  };
+
   // 开始游戏
   playGame = () => {
+    if (!this.playerVm) {
+      this.initVm();
+    }
+
     if (this.state.isLoadProject) {
       this.playerVm.vm.greenFlag();
-      this.setState({ isPlay: true });
-      document.addEventListener('touchmove', preventTouchMove, { passive: false });
     } else {
       this.loadProject();
     }
-
-    this.calculateStageSize();
   };
 
   // 停止游戏
   stopGame = () => {
     this.playerVm.vm.stopAll();
-    this.setState({
-      isPlay: false,
-      stageSize: {
-        widthDefault: 480,
-        heightDefault: 320,
-        width: window.innerWidth,
-        height: window.innerWidth * ratio,
-        scale: window.innerWidth / 480
-      }
-    });
-    document.removeEventListener('touchmove', preventTouchMove);
   };
-
-  // 计算舞台大小
-  calculateStageSize() {
-    let screenWidth = window.innerWidth;
-    let screenHeight = window.innerHeight;
-    let rem = (screenWidth / 375) * 100;
-    let stageConBottom = 200 + 0.78 * rem;
-    let stageConHeight = screenHeight - stageConBottom;
-
-    if (screenWidth * 0.75 > stageConHeight) {
-      this.setState({
-        playerConStyle: {
-          bottom: stageConBottom + 'px'
-        },
-        canvasConStyle: {
-          width: 'auto',
-          height: '100%'
-        },
-        stageSize: {
-          widthDefault: 480,
-          heightDefault: 320,
-          width: stageConHeight / 0.75,
-          height: stageConHeight,
-          scale: stageConHeight / 320
-        }
-      });
-    } else {
-      this.setState({
-        playerConStyle: {
-          bottom: stageConBottom + 'px'
-        },
-        canvasConStyle: {
-          width: '100%'
-        },
-        stageSize: {
-          widthDefault: 480,
-          heightDefault: 320,
-          width: window.innerWidth,
-          height: window.innerWidth * 0.75,
-          scale: window.innerWidth / 480
-        }
-      });
-    }
-  }
 
   render() {
     const { data } = this.props;
-    const { loading, stageSize, isLoadProject, isPlay, monitors, playerConStyle, canvasConStyle } = this.state;
+    const { loading, fullscreen, stageSize, isLoadProject, monitors } = this.state;
 
-    this.playerVm.canvas.style.cssText = Style.string({ width: stageSize.width, height: stageSize.height });
+    if (this.playerVm) {
+      this.playerVm.canvas.style.cssText = Style.string({ width: stageSize.width, height: stageSize.height });
+    }
 
     return (
       <Provider store={redux}>
-        <div className={isPlay ? styles.fullscreen : styles.container}>
-          {/* <Spin spinning={loading} style={{ overflow: 'hidden' }}> */}
-          <div className={styles.playerContainer} style={isPlay ? playerConStyle : {}}>
-            <div className={styles.canvasCon} ref={this.setCanvasRef} style={isPlay ? canvasConStyle : {}}>
+        <div
+          className={fullscreen ? styles.fullscreen : styles.normal}
+          style={{ width: fullscreen ? '100%' : `${stageSize.width}px` }}
+        >
+          <Spin spinning={loading}>
+            <div
+              className={styles.canvasCon}
+              ref={this.setCanvasRef}
+              style={{ width: `${stageSize.width}px`, height: `${stageSize.height}px` }}
+            >
               <ConnectedIntlProvider>
                 <MonitorList
                   draggable={false}
@@ -183,18 +166,34 @@ class Player extends Component {
                 />
               </ConnectedIntlProvider>
 
-              {!isPlay && (
+              {!isLoadProject && (
                 <React.Fragment>
                   <div className={styles.projectImg} style={{ backgroundImage: `url(${data._coverUrl})` }} />
                   <div className={styles.playBtn}>
-                    <img src={imgPlayBtn} onClick={this.playGame} />
+                    <div className={styles.playBtnCon}>
+                      <img
+                        className={styles.playBtnImg}
+                        src={require('./images/btn_play.png')}
+                        onClick={this.playGame}
+                      />
+                      <img
+                        className={styles.playBtnHover}
+                        src={require('./images/btn_play_hover.png')}
+                        onClick={this.playGame}
+                      />
+                    </div>
                   </div>
                 </React.Fragment>
               )}
             </div>
 
+            {/* 按钮 */}
             <div className={styles.btnRow}>
               <div className={styles.btnCon} style={{ width: `${stageSize.width}px` }}>
+                <svg className={`${styles.fullscreenBtn} icon`} aria-hidden="true" onClick={this.handleFullscreen}>
+                  <use xlinkHref="#icon_detail_full-scr" />
+                </svg>
+
                 <svg className={`${styles.startBtn} icon`} aria-hidden="true" onClick={this.playGame}>
                   <use xlinkHref="#icon_detail_flagx" />
                 </svg>
@@ -204,9 +203,7 @@ class Player extends Component {
                 </svg>
               </div>
             </div>
-          </div>
-
-          <KeyBoard visible={isPlay} vm={this.playerVm.vm} />
+          </Spin>
         </div>
       </Provider>
     );
