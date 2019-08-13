@@ -23,13 +23,6 @@ const webpackConfig = merge(baseWebpackConfig, {
       }
     ]),
 
-    new CopyWebpackPlugin([
-      {
-        from: 'dist',
-        to: '../../mscodemobile/node_modules/scratch'
-      }
-    ]),
-
     new webpack.NoEmitOnErrorsPlugin(),
 
     new FriendlyErrorsPlugin({

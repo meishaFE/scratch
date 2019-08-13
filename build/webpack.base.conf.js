@@ -14,7 +14,7 @@ module.exports = {
 
   output: {
     libraryTarget: 'umd',
-    path: path.resolve(__dirname, '../dist'), // 打包后文件输出的目录
+    path: path.resolve(__dirname, '../release'), // 打包后文件输出的目录
     filename: '[name].js',
 
     // 正式发布环境下编译输出的上线路径的根路径
