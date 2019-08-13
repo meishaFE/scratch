@@ -19,7 +19,7 @@ module.exports = {
 
     // 正式发布环境下编译输出的上线路径的根路径
     // 如：publicPath: "http://cdn.example.com/
-    publicPath: './'
+    publicPath: '/'
   },
 
   resolve: {
@@ -37,10 +37,7 @@ module.exports = {
       {
         test: /\.(jsx|js)?$/,
         loader: 'babel-loader',
-        include: [
-          path.resolve(__dirname, '../src'),
-          /node_modules[\\/]scratch-[^\\/]+[\\/]src/
-        ]
+        include: [path.resolve(__dirname, '../src'), /node_modules[\\/]scratch-[^\\/]+[\\/]src/]
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,

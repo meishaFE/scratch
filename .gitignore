@@ -16,7 +16,3 @@ npm-*
 /translations
 /locale
 /release
-
-/scratchGui
-
-/appBuild

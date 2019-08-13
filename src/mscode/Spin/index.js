@@ -7,11 +7,9 @@ class Spin extends Component {
       <div className={styles.spin}>
         {this.props.children}
 
-        {this.props.spinning && (
-          <div className={styles.cover}>
-            <div />
-          </div>
-        )}
+        <div className={styles.cover} style={{ display: this.props.spinning ? 'block' : 'none' }}>
+          <div />
+        </div>
       </div>
     );
   }
