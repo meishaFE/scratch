@@ -22,3 +22,4 @@
 - `lib/project-fetcher-hoc.jsx` 更改cdn地址
 - `lib/storage.js` 更改cdn地址
 - `container/library-item.jsx` 更改cdn地址
+- `components/monitor` 修改样式
