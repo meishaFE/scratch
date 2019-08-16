@@ -219,11 +219,11 @@ Monitor.propTypes = {
   resizeMonitorRect: PropTypes.func.isRequired,
   spriteName: PropTypes.string, // eslint-disable-line react/no-unused-prop-types
   targetId: PropTypes.string,
-  value: PropTypes.oneOfType([
+  /* value: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.number,
     PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.number]))
-  ]), // eslint-disable-line react/no-unused-prop-types
+  ]), */ // eslint-disable-line react/no-unused-prop-types
   vm: PropTypes.instanceOf(VM),
   width: PropTypes.number,
   x: PropTypes.number,

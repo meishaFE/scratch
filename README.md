@@ -13,6 +13,7 @@
 
 修改的文件：
 
+- `containers/gui.jsx` ReactModal.setAppElemen
 - `components/gui/gui.jsx` 更改 menubar
 - `lib/analytice.js` 去除 react-ga
 - `lib/app-state-hoc.jsx` 将store暴露到全局 
@@ -23,3 +24,10 @@
 - `lib/storage.js` 更改cdn地址
 - `container/library-item.jsx` 更改cdn地址
 - `components/monitor` 修改样式
+
+打包注意事项：
+
+- 打包文件夹为 release
+- 打包后删除 static 文件，文件太大了
+- 打包后修改 package.json 中的版本号
+- 提交到 msater 分支：npm run release

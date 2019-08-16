@@ -3,21 +3,23 @@ import React, { Component } from 'react';
 import { keyNum, keyLetter } from './keys';
 
 class Keyboard extends Component {
-  handleTouchStart = e => {
+  handleTouchStart = (e, key) => {
+    e.stopPropagation();
     if (this.props.vm.postIOData) {
       this.props.vm.postIOData('keyboard', {
-        keyCode: e.keyCode,
-        key: e.key,
+        keyCode: key.keyCode,
+        key: key.key,
         isDown: true
       });
     }
   };
 
-  handleTouchEnd = e => {
+  handleTouchEnd = (e, key) => {
+    e.stopPropagation();
     if (this.props.vm.postIOData) {
       this.props.vm.postIOData('keyboard', {
-        keyCode: e.keyCode,
-        key: e.key,
+        keyCode: key.keyCode,
+        key: key.key,
         isDown: false
       });
     }
@@ -34,10 +36,10 @@ class Keyboard extends Component {
               className={styles.btnNum}
               key={index}
               onTouchStart={e => {
-                this.handleTouchStart({ keyCode: item.keyCode, key: item.key });
+                this.handleTouchStart(e, { keyCode: item.keyCode, key: item.key });
               }}
               onTouchEnd={e => {
-                this.handleTouchEnd({ keyCode: item.keyCode, key: item.key });
+                this.handleTouchEnd(e, { keyCode: item.keyCode, key: item.key });
               }}
             >
               {item.name}
@@ -51,10 +53,10 @@ class Keyboard extends Component {
                 className={`${styles.btnLetter} ${item.light && styles.light}`}
                 key={index}
                 onTouchStart={e => {
-                  this.handleTouchStart({ keyCode: item.keyCode, key: item.key });
+                  this.handleTouchStart(e, { keyCode: item.keyCode, key: item.key });
                 }}
                 onTouchEnd={e => {
-                  this.handleTouchEnd({ keyCode: item.keyCode, key: item.key });
+                  this.handleTouchEnd(e, { keyCode: item.keyCode, key: item.key });
                 }}
               >
                 {item.name}
@@ -66,10 +68,10 @@ class Keyboard extends Component {
         <div
           className={styles.space}
           onTouchStart={e => {
-            this.handleTouchStart({ keyCode: 32, key: ' ' });
+            this.handleTouchStart(e, { keyCode: 32, key: ' ' });
           }}
           onTouchEnd={e => {
-            this.handleTouchEnd({ keyCode: 32, key: ' ' });
+            this.handleTouchEnd(e, { keyCode: 32, key: ' ' });
           }}
         >
           空格

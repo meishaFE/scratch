@@ -7,7 +7,7 @@
     background: $ui-primary;
     z-index: $z-index-monitor;
     border: 1px solid $ui-black-transparent;
-    border-radius: calc($space / 2);
+    border-radius: 5px;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 14px;
     transition: box-shadow 0.2s;
@@ -45,7 +45,7 @@
     text-align: center;
     color: white;
     margin: 0 5px;
-    border-radius: calc($space / 2);
+    border-radius: 5px;
     padding: 0 2px;
     transform: translateZ(0); /* Fixes flickering in Safari */
 }
@@ -76,6 +76,8 @@
 }
 
 .list-header {
+    height: 25px;
+    line-height: 18px;
     background: $ui-white;
     border-bottom: 1px solid $ui-black-transparent;
     text-align: center;
@@ -116,8 +118,7 @@
     text-align: left;
     color: white;
     margin: 0 3px;
-    border-radius: calc($space / 2);
-    border: 1px solid $ui-black-transparent;
+    border-radius: 5px;
     flex-grow: 1;
     height: 22px;
 }
@@ -131,6 +132,7 @@
     font-size: 12px;
     font-weight: bold;
     color: $text-primary;
+    line-height: 18px;
 }
 
 .list-empty {
@@ -150,6 +152,8 @@
 .value-inner {
     padding: 3px 5px;
     min-height: 22px;
+    line-height: 18px;
+    font-size: 12px;
     overflow: hidden; /* Don't let long values escape container */
     text-overflow: ellipsis;
     user-select: text; /* Allow selecting list values for 2.0 compatibility, only relevant in player */
