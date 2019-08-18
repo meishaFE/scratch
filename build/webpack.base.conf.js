@@ -3,7 +3,6 @@ const utils = require('./utils');
 
 module.exports = {
   target: 'web',
-  devtool: 'cheap-module-source-map',
 
   // context是webpack编译时的基础目录，entry入口会相对于此目录查找
   context: path.resolve(__dirname, '../'),
