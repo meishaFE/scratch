@@ -117,6 +117,7 @@ class LibraryItemComponent extends React.PureComponent {
                 onKeyPress={this.props.onKeyPress}
                 onMouseEnter={this.props.onMouseEnter}
                 onMouseLeave={this.props.onMouseLeave}
+                title={this.props.name}
             >
                 {/* Layers of wrapping is to prevent layout thrashing on animation */}
                 <Box className={styles.libraryItemImageContainerWrapper}>
