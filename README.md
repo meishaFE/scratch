@@ -24,6 +24,7 @@
 - `lib/storage.js` 更改cdn地址
 - `container/library-item.jsx` 更改cdn地址
 - `components/monitor` 修改样式
+- `components/question` 修改样式
 
 打包注意事项：
 

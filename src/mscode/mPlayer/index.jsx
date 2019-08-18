@@ -9,6 +9,7 @@ import imgPlayBtn from './images/btn_play.png';
 import { Provider } from 'react-redux';
 import redux from './store';
 import Spin from '../Spin';
+import Question from '@/containers/question.jsx';
 
 const ratio = 0.75;
 let submiting = false;
@@ -25,6 +26,7 @@ class MPlayer extends Component {
     isLoadProject: false,
     isPlay: false,
     monitors: {},
+    question: null,
 
     playerConStyle: {},
     canvasConStyle: {},
@@ -51,20 +53,32 @@ class MPlayer extends Component {
     this.playerVm.vm.on('MONITORS_UPDATE', monitors => {
       this.setState({ monitors });
     });
-  }
-
-  componentWillUnmount() {
-    this.playerVm.detachEvents(this.playerVm.canvas);
-    this.playerVm.vm.stopAll();
-    document.removeEventListener('touchmove', preventTouchMove);
+    this.playerVm.vm.runtime.addListener('QUESTION', this.questionListener);
   }
 
   componentWillUpdate() {
     this.playerVm.updateRect();
   }
 
+  componentWillUnmount() {
+    this.playerVm.detachEvents(this.playerVm.canvas);
+    this.playerVm.vm.stopAll();
+    document.removeEventListener('touchmove', preventTouchMove);
+    this.playerVm.vm.runtime.removeListener('QUESTION', this.questionListener);
+  }
+
   setCanvasRef = ele => {
     this.canvasRef = ele;
+  };
+
+  questionListener = question => {
+    this.setState({ question: question });
+  };
+
+  handleQuestionAnswered = answer => {
+    this.setState({ question: null }, () => {
+      this.playerVm.vm.runtime.emit('ANSWER', answer);
+    });
   };
 
   // 加载项目
@@ -165,7 +179,16 @@ class MPlayer extends Component {
 
   render() {
     const { data } = this.props;
-    const { loading, stageSize, isLoadProject, isPlay, monitors, playerConStyle, canvasConStyle } = this.state;
+    const {
+      loading,
+      stageSize,
+      isLoadProject,
+      isPlay,
+      monitors,
+      playerConStyle,
+      canvasConStyle,
+      question
+    } = this.state;
 
     this.playerVm.canvas.style.cssText = Style.string({ width: stageSize.width, height: stageSize.height });
 
@@ -176,12 +199,20 @@ class MPlayer extends Component {
             <div className={styles.playerContainer} style={isPlay ? playerConStyle : {}}>
               <div className={styles.canvasCon} ref={this.setCanvasRef} style={isPlay ? canvasConStyle : {}}>
                 <ConnectedIntlProvider>
-                  <MonitorList
-                    draggable={false}
-                    stageSize={stageSize}
-                    monitors={monitors}
-                    vm={this.playerVm ? this.playerVm.vm : {}}
-                  />
+                  <React.Fragment>
+                    <MonitorList
+                      draggable={false}
+                      stageSize={stageSize}
+                      monitors={monitors}
+                      vm={this.playerVm ? this.playerVm.vm : {}}
+                    />
+
+                    {question === null ? null : (
+                      <div className={styles.questionWrapper}>
+                        <Question question={question} onQuestionAnswered={this.handleQuestionAnswered} />
+                      </div>
+                    )}
+                  </React.Fragment>
                 </ConnectedIntlProvider>
 
                 {!isPlay && (

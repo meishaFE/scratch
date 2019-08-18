@@ -7,6 +7,7 @@ import ConnectedIntlProvider from '@/lib/connected-intl-provider.jsx';
 import { Provider } from 'react-redux';
 import redux from './store';
 import Spin from '../Spin';
+import Question from '@/containers/question.jsx';
 
 const ratio = 0.75;
 let submiting = false;
@@ -17,6 +18,7 @@ class Player extends Component {
     fullscreen: false,
     isLoadProject: false,
     monitors: {},
+    question: null,
 
     stageSize: {
       widthDefault: 480,
@@ -36,6 +38,20 @@ class Player extends Component {
     this.setStageSize();
     this.initVm();
   }
+
+  componentWillUpdate() {
+    this.playerVm.updateRect();
+  }
+
+  componentWillUnmount() {
+    this.playerVm.detachEvents(this.playerVm.canvas);
+    this.playerVm.vm.stopAll();
+    this.playerVm.vm.runtime.removeListener('QUESTION', this.questionListener);
+  }
+
+  setCanvasRef = ele => {
+    this.canvasRef = ele;
+  };
 
   // 设置播放器大小
   setStageSize = () => {
@@ -71,22 +87,22 @@ class Player extends Component {
     this.playerVm.attachEvents(this.playerVm.canvas);
 
     // 监听变量
-    this.playerVm.vm.on('MONITORS_UPDATE', monitors => {
-      this.setState({ monitors });
-    });
+    this.playerVm.vm.on('MONITORS_UPDATE', this.monitorListener);
+    this.playerVm.vm.runtime.addListener('QUESTION', this.questionListener);
   };
 
-  componentWillUnmount() {
-    this.playerVm.detachEvents(this.playerVm.canvas);
-    this.playerVm.vm.stopAll();
-  }
+  monitorListener = monitors => {
+    this.setState({ monitors });
+  };
 
-  componentWillUpdate() {
-    this.playerVm.updateRect();
-  }
+  questionListener = question => {
+    this.setState({ question: question });
+  };
 
-  setCanvasRef = ele => {
-    this.canvasRef = ele;
+  handleQuestionAnswered = answer => {
+    this.setState({ question: null }, () => {
+      this.playerVm.vm.runtime.emit('ANSWER', answer);
+    });
   };
 
   // 加载项目
@@ -139,7 +155,7 @@ class Player extends Component {
 
   render() {
     const { data } = this.props;
-    const { loading, fullscreen, stageSize, isLoadProject, monitors } = this.state;
+    const { loading, fullscreen, stageSize, isLoadProject, monitors, question } = this.state;
 
     if (this.playerVm) {
       this.playerVm.canvas.style.cssText = Style.string({ width: stageSize.width, height: stageSize.height });
@@ -158,12 +174,20 @@ class Player extends Component {
               style={{ width: `${stageSize.width}px`, height: `${stageSize.height}px` }}
             >
               <ConnectedIntlProvider>
-                <MonitorList
-                  draggable={false}
-                  stageSize={stageSize}
-                  monitors={monitors}
-                  vm={this.playerVm ? this.playerVm.vm : {}}
-                />
+                <React.Fragment>
+                  <MonitorList
+                    draggable={false}
+                    stageSize={stageSize}
+                    monitors={monitors}
+                    vm={this.playerVm ? this.playerVm.vm : {}}
+                  />
+
+                  {question === null ? null : (
+                    <div className={styles.questionWrapper}>
+                      <Question question={question} onQuestionAnswered={this.handleQuestionAnswered} />
+                    </div>
+                  )}
+                </React.Fragment>
               </ConnectedIntlProvider>
 
               {!isLoadProject && (
