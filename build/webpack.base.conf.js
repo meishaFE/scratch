@@ -42,7 +42,7 @@ module.exports = {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'url-loader',
         options: {
-          limit: 2,
+          limit: 10000,
           name: utils.assetsPath('img/[name].[ext]')
         }
       },
@@ -50,7 +50,7 @@ module.exports = {
         test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
         loader: 'url-loader',
         options: {
-          limit: 2,
+          limit: 10000,
           name: utils.assetsPath('media/[name].[ext]')
         }
       }

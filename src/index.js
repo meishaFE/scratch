@@ -1,4 +1,5 @@
 import './mscode/icon/iconfont';
+import 'intl';
 import { compose } from 'redux';
 import GUI from './containers/gui.jsx';
 import AppStateHOC from './lib/app-state-hoc.jsx';
