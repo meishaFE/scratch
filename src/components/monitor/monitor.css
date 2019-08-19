@@ -76,7 +76,7 @@
 }
 
 .list-header {
-    height: 25px;
+    min-height: 25px;
     line-height: 18px;
     background: $ui-white;
     border-bottom: 1px solid $ui-black-transparent;
