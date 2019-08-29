@@ -8,7 +8,8 @@
   "mini-css-extract-plugin": "^0.7.0",
   "optimize-css-assets-webpack-plugin": "^5.0.3",
   "url-loader": "^2.0.1",
-  "clean-webpack-plugin": "^3.0.0"
+  "clean-webpack-plugin": "^3.0.0",
+  "gulp": "^4.0.2",
 }
 ```
 
@@ -29,6 +30,7 @@
 
 打包注意事项：
 
+- 打包时会会把打包后的文件复制到开发环境，注意修改路径
 - 打包文件夹为 release
 - 打包后会删除 static 文件，文件太大了。web端的项目手动复制过去，注意编辑器更新时可能有文件更新，需要再复制一次
 - 打包后修改 package.json 中的版本号

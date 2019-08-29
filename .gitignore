@@ -15,3 +15,5 @@ npm-*
 # generated translation files
 /translations
 /locale
+
+/release/electron

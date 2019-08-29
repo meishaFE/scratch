@@ -63,6 +63,10 @@ module.exports = {
   },
 
   plugins: [
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify('production')
+    }),
+
     // 提取 css 到单独的文件
     new miniCssExtractPlugin({
       filename: 'styles.css'
