@@ -4,8 +4,10 @@
   "description": "scratch组件库",
   "scripts": {
     "dev": "webpack --watch --inline --progress --config build/webpack.dev.conf.js",
-    "build": "webpack --inline --progress --config build/webpack.prod.conf.js",
-    "release": "git subtree push --prefix=release origin master"
+    "build": "npm run build:web && npm run build:electron",
+    "build:web": "webpack --inline --progress --config build/web.prod.conf.js",
+    "build:electron": "webpack --inline --progress --config build/electron.prod.conf.js",
+    "release": "git subtree push --prefix=release/web origin master"
   },
   "author": "wawjqyh",
   "license": "ISC",
@@ -28,6 +30,7 @@
     "bowser": "1.9.4",
     "chromedriver": "74.0.0",
     "classnames": "2.2.6",
+    "clean-webpack-plugin": "^3.0.0",
     "computed-style-to-inline-style": "3.0.0",
     "copy-webpack-plugin": "^4.5.1",
     "core-js": "2.5.7",
