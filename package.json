@@ -1,11 +1,14 @@
 {
   "name": "scratch",
-  "version": "1.1.4",
+  "version": "1.0.0",
   "description": "scratch组件库",
   "scripts": {
     "dev": "webpack --watch --inline --progress --config build/webpack.dev.conf.js",
-    "build": "webpack --inline --progress --config build/webpack.prod.conf.js",
-    "release": "git subtree push --prefix=release origin master"
+    "build": "npm run build:web && npm run build:electron && npm run copy",
+    "build:web": "webpack --inline --progress --config build/web.prod.conf.js",
+    "build:electron": "webpack --inline --progress --config build/electron.prod.conf.js",
+    "copy": "node build/copy.js",
+    "release": "git subtree push --prefix=release/web origin master"
   },
   "author": "wawjqyh",
   "license": "ISC",
@@ -28,6 +31,7 @@
     "bowser": "1.9.4",
     "chromedriver": "74.0.0",
     "classnames": "2.2.6",
+    "clean-webpack-plugin": "^3.0.0",
     "computed-style-to-inline-style": "3.0.0",
     "copy-webpack-plugin": "^4.5.1",
     "core-js": "2.5.7",
@@ -44,6 +48,7 @@
     "get-float-time-domain-data": "0.1.0",
     "get-user-media-promise": "1.1.4",
     "gh-pages": "github:rschamp/gh-pages#publish-branch-to-subfolder",
+    "gulp": "^4.0.2",
     "html-webpack-plugin": "^3.2.0",
     "immutable": "3.8.2",
     "intl": "1.2.5",
