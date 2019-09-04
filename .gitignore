@@ -16,4 +16,6 @@ npm-*
 /translations
 /locale
 
-/release/electron
+/release/.DS_Store
+/release/scratch/.DS_Store
+/release/scratch-electron

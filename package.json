@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "description": "scratch组件库",
   "scripts": {
-    "dev": "webpack --watch --inline --progress --config build/webpack.dev.conf.js",
-    "build": "npm run build:web && npm run build:electron && npm run copy",
+    "build": "npm run build:web && npm run build:electron",
     "build:web": "webpack --inline --progress --config build/web.prod.conf.js",
     "build:electron": "webpack --inline --progress --config build/electron.prod.conf.js",
     "copy": "node build/copy.js",

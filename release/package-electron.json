@@ -1,0 +1,8 @@
+{
+  "name": "scratch-electron",
+  "version": "1.2.0",
+  "description": "scratch组件库",
+  "author": "Troy",
+  "license": "ISC",
+  "main": "index.js"
+}

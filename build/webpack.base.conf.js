@@ -21,7 +21,7 @@ module.exports = {
   output: {
     libraryTarget: 'umd',
     filename: '[name].js',
-    path: path.resolve(__dirname, '../release/web'), // 打包后文件输出的目录
+    path: path.resolve(__dirname, '../release/scratch'), // 打包后文件输出的目录
     publicPath: '/'
   },
 
@@ -74,19 +74,8 @@ module.exports = {
 
     // 优化压缩CSS
     new OptimizeCSSPlugin({
-      cssProcessorOptions: { safe: true, map: { inline: false } }
+      cssProcessorOptions: { safe: true }
     }),
-
-    new CopyWebpackPlugin([
-      {
-        from: 'node_modules/scratch-blocks/media',
-        to: 'static/blocks-media'
-      },
-      {
-        from: 'package.json',
-        to: ''
-      }
-    ]),
 
     new webpack.NoEmitOnErrorsPlugin(),
 
