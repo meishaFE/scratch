@@ -1,0 +1,218 @@
+{
+  "1-入门": [
+    {
+      "language": "eng",
+      "text": "With Scratch, you can make your own stories,\n\ngames,\n\nand animations.\n\nLet's start by grabbing a \"move\" block.\n\nWe can click the block to run it.\n\nThere are many other blocks to choose from.\nCheck out the different categories.\n\nLet's go to the sound category,\nand grab a \"Play sound until done\" block.\n\nI'll snap this on to our move block\n\nWhen do we want these code blocks to run?\n\nAdd an event block on top to start the code.\n\nI'll add the \"When green flag clicked\" block.\n\nYou can easily reorder\nor delete these blocks at any time.\n\nAdd as many characters as you want\nto your project, and code each one.\n\nCheck out the Tutorials page for ideas and inspiration!"
+    },
+    {
+      "language": "chi",
+      "text": "用Scratch你可以创作自己的故事\n\n游戏\n\n和动画。\n\n先试试这个「移动」积木。\n\n点击积木可以运行它。\n\n还有很多别的积木，\n分属不同的类别。\n\n看看声音类别，\n拿起一个「播放声音等待播完」积木。\n\n我把它插在「移动」积木下面\n\n这些积木代码应该何时开始运行呢？\n\n需要在上面放一个事件积木来启动代码。\n\n添加一块「当绿旗被点击」积木。\n\n你随时可以轻易地调整积木的顺序，\n或者删除一个积木。\n\n你可以根据需要添加若干角色，\n编写他们各自的代码。\n\n看看教程中的例子，寻找创意和灵感！"
+    }
+  ],
+  "2-姓名动画": [
+    {
+      "language": "eng",
+      "text": "You can use Scratch to animate a name\nand bring it to life.\n\nMake the letters change color,\n\nspin,\n\ngrow,\n\nor interact however you'd like!\n\nTo get started,\nwe'll pick a background.\n\nAnd then we'll pick our first letter.\n\nLet's remove the Scratch cat sprite.\n\nNow, let's make it interactive.\n\nI'll make the letter play a sound when I click it.\n\nFor more ideas click the green arrow!"
+    },
+    {
+      "language": "chi",
+      "text": "你可以用Scratch制作姓名动画，\n让名字活动起来。\n\n改变字母颜色，\n\n旋转，\n\n发光，\n\n想怎么动就怎么动！\n\n动手试试吧，先选一个背景。\n\n接着选好第一个字母。\n\n删除Scratch小猫角色。\n\n现在，设计一些互动。\n\n比如让字母被点击时播放声音。\n\n点绿色箭头看看其他创意！"
+    }
+  ],
+  "4-制作音乐": [
+    {
+      "language": "eng",
+      "text": "You can use Scratch to make music!\n\nCreate a song,\n\nmake a beat,\n\nor anything else you can imagine.\n\nTo get started pick a sprite.\n\nI'll pick the saxophone.\n\nNow, let's make it interactive.\n\nI'll make the saxophone\nplay a sound when I click it.\n\nClick the green arrow to see this code again\n\nand explore what else you might add to your project!"
+    },
+    {
+      "language": "chi",
+      "text": "你可以用Scratch创作音乐！\n\n创作乐曲，\n\n打拍子，\n\n以及你能想象的其他声音。\n\n首先，挑选一个角色。\n\n比如萨克斯\n\n接着，加入一些交互效果。\n\n比如点击萨克斯的时候，让它演奏音乐。\n\n点击绿色箭头观看这段代码\n\n探索一下，看你还能向项目中加入别的什么！"
+    }
+  ],
+  "5-创作故事": [
+    {
+      "language": "eng",
+      "text": "You can use Scratch to tell a story!\n\nCreate a conversation\n\nSwitch scenes, or do whatever else you can imagine\n\nTo get started, let's pick a background\n\nI'll go with the \"Witch House\"\n\nNow, let's pick a sprite\n\nI'll pick the \"Wizard\"\n\nLet's have our character say something. I'll have my character say \"Welcome to magic school\"\n\nI'd like to add another character. So I'll choose another sprite. This time, I'll pick the \"Elf\"\n\nIt looks like the elf isn't facing the wizard, so I'll change the way they're looking\n\nLet's go to the \"Costumes\" tab and choose \"Flip Horizontal.\" So the costume is now flipped to face the wizard\n\nLet's make a conversation. I'll add a \"say\" block to the elf sprite. I'll make this character say \"I'm going on a quest!\"\n\nLet's click the green flag to see what happens\n\nThey both speak at the same time. So let's go ahead and add a \"wait\" block before the elf speaks\n\nI'll make this two seconds\n\nLet's have the characters change scenes, I'll add another background this time. I'll choose \"Mountain\"\n\nI'll reselect the elf sprite and go back to the coding area\n\nLet's have the characters start at the witch house\n\nWait four seconds, which is how long the conversation is, and then switch to the mountain backdrop\n\nFinally, what if we don't want the wizard to be in the mountain scene?\n\nLet's go back to the wizard sprite and add a \"When backdrop switches to\" block\n\nI'll set it to \"Mountain\" and make the wizard hide\n\nLet's try it out\n\nLooks good! Now, let's replay the project\n\nThe wizard doesn't show up at all. That's because we've hidden it\n\nso we need to add a \"show\" block at the top of the script so that whenever someone\n\nreplays the project the wizard will show first\n\nClick the green arrow to see this code again, and explore what else you might add to your story!"
+    },
+    {
+      "language": "chi",
+      "text": "你可以用Scratch来讲故事！\n\n创作对话\n\n切换场景，或者做任何你能想到的事\n\n让我们从选择一个背景开始\n\n我选「Witch House」这个背景\n\n现在，让我们挑选一个角色\n\n我将挑选「Wizard」\n\n让我们的角色说些什么吧。我让我的角色说：「欢迎来到魔法学校」\n\n我想要添加另一个角色。所以我会选择另一个角色。这次我要选「Elf」\n\n看起来精灵没有面对巫师，所以我要更改他们的方向\n\n让我们进入「造型」标签页，选择「水平翻转」。造型现在翻了过来面对着巫师。\n\n让我们制作一个对话。我会给精灵造型添加一个「说」积木。让它说：「我要去探索」\n\n点下绿旗，看看会发生什么。\n\n他们讲话的时间相同。所以，我们还得在精灵说话之前添加一个「等待」积木。\n\n等两秒吧。\n\n让我们让角色改变场景，这次我会添加另一个背景。 我会选择「山」。\n\n重新选择精灵角色并返回编程区域，\n\n让角色从巫师的家开始，\n\n等待四秒，也就是对话所需的时间，再把背景切换到山。\n\n最后，如果我们不希望巫师出现在山的场景中，该怎么办？\n\n我们回到巫师角色再加一个「当背景切换到」积木，\n\n把它设置成「山」再加一个隐藏积木。\n\n来试试。\n\n不错，我们重新播放一下作品。\n\n巫师咋不见了？因为我们隐藏了它。\n\n所以我们在代码的开始处还要加一个「显示」积木。\n\n再播放一次，嗯，巫师又出现了。\n\n点击绿色箭头再次查看此代码，并想想你还可以怎么完善这个故事！"
+    }
+  ],
+  "6-制作追赶游戏": [
+    {
+      "language": "eng",
+      "text": "You can use Scratch to make a chase game!\n\nTo start, let's pick a backdrop.\n\nNow, let's pick a sprite.\n\nI'll choose the octopus.\n\nLet's make it move\nwhen I press the arrow keys.\n\nWhen I press the right arrow key,\nwe can make it move right.\n\nAnd left arrow to move left.\n\nLet's add a sprite to chase.\n\nI'll choose the star.\n\nLet's make this sprite move around randomly.\n\nClick the green arrow to see this code again\n\nand to see what else you might add to your game!"
+    },
+    {
+      "language": "chi",
+      "text": "用Scratch可以制作一款追逐游戏！\n\n首先，挑选一个背景。\n\n然后，挑选一个角色。\n\n比如章鱼。\n\n使用方向键让它移动。\n\n按右箭头时候，让它向右移。\n\n左箭头向左移。\n\n再添加一个角色做为追逐的对象。\n\n比如星星。\n\n让这个角色随机移动。\n\n点击绿色箭头观看代码\n\n看看你还想加入些别的什么！"
+    }
+  ],
+  "7-角色动画": [
+    {
+      "language": "eng",
+      "text": "You can use Scratch to animate a character and bring it to life!\n\nMake it say something, move around,\n\nor do whatever else you can imagine!\n\nTo get started let's pick a background.\n\nI'll choose the \"Arctic.\"\n\nNext, let's pick a sprite.\n\nI'll choose the \"Penguin\"\n\nLet's make our character say something.\n\nI'll have my character say \"Hello\"\n\nNow, let's animate it talking.\n\nWe can do this by switching the sprite's costumes.\n\nClick the costume tab to see the different costumes.\n\nWe see this sprite has four costumes.\n\nLet's start with the penguin's mouth open which is \"Costume B\"\n\nThen wait point five seconds\n\nAnd then switch the \"Costume A\" which is the Penguin's mouth closed\n\nMaybe we have it play of sound at the beginning?\n\nFinally, let's add a \"When green flag clicked\" block on top to start the code\n\nClick the green arrow to see this code again and explore what else you might add to your project!"
+    },
+    {
+      "language": "chi",
+      "text": "你可以使用Scratch为角色制作动画，让它栩栩如生！\n\n让它说些话，四处移动，\n\n或者任何你能想到的事情！\n\n开始干吧，我们先选择一个背景。\n\n我选择“北极”。\n\n然后，我们选择一个角色。\n\n我会选择“企鹅”。\n\n让它说些什么呢？\n\n嗯，说「你好」吧！\n\n然后，我们给它添加一个说话的动画。\n\n我们可以通过改变它的造型来做到。\n\n点击造型标签页看看有什么造型。\n\n我们看到它有4个造型。\n\n我们让它先张着嘴巴，也就是从造型「Custom B」开始。\n\n然后等待0.5秒。\n\n然后换成「Custom A」造型，嘴巴闭上。\n\n我们也许可以在开始时播放一下声音？\n\n最后，让我们在顶部添加「当绿旗被点击」积木以运行代码。\n\n点击绿色箭头再看一遍代码，想想你还能往这个作品里加点什么！"
+    }
+  ],
+  "8-制作消除游戏": [
+    {
+      "language": "eng",
+      "text": "You can use Scratch to make a clicker game!\n\nLet's pick a sprite.\n\nI'll choose the balloon.\n\nLet's make it play a sound when I click it.\n\nTo add a score,\nlet's first create a variable called \"score.\"\n\nNow, we can add the \"change variable\"\nblock to our code.\n\nClick the green arrow to see this code again\n\nand explore what else you might add to your game!"
+    },
+    {
+      "language": "chi",
+      "text": "用Scratch可以制作一款点击游戏！\n\n首先，挑选一个角色。\n\n比如气球。\n\n让气球被点击时播放声音。\n\n为了记录游戏分数，要先创建一个名为「分数」的变量。\n\n然后在代码中添加「改变变量」积木。\n\n点击绿色箭头观看这段代码\n\n探索一下，看看你还想加入些别的什么！"
+    }
+  ],
+  "9-让角色飞行": [
+    {
+      "language": "eng",
+      "text": "With Scratch, you can make a character\nfly.\n\nIt could be anyone flying anywhere\n\nStart by choosing a character to fly with\n\nNext, let's pick something to fly past.\n\nIt can be anything\n\nI'll pick buildings\n\nTo make our character look like it's moving, we can\nmove the scenery behind it.\n\nLet's use change X to move the building across the screen.\n\nLet's try a negative number to make it look like it's going past it.\n\nLet's make it repeat,\n\nperhaps 50 times.\n\nLet's have our building start all the\nway to the right.\n\nWe can use set X\n\nZero is going to be in the middle so let's\ntry a higher number\n\nI'll try 250\n\nLet's have it keep going\nforever\n\nWe can start this script by pressing the\ngreen flag\n\nTo learn how to make your character move with arrow keys,\n\nadd a score, or fly with the crew,\n\nclick the green arrow!"
+    }
+  ],
+  "10-乒乓球游戏": [
+    {
+      "language": "eng",
+      "text": "You can use Scratch to make a pong game!\n\nBounce a ball, or something else,\n\nand score points to win!\n\nFirst, let's pick a\nbackdrop.\n\nI'll pick this one\n\nLet's choose an object to bounce around.\n\nI'll pick this ball\n\nWe can make the ball move with this block.\n\nLet's see what happens if we\nput it in a loop.\n\nIt seems to be stuck on the edge.\n\nLet's try adding this block, \"if on edge bounce,\" inside the loop\n\nGreat, it's moving back and forth.\n\nLet's see if we can make it bounce at an angle.\n\nI'll make it point at an angle,\n\nand start the code by clicking the green flag.\n\nNow, let's add another sprite that the\nplayer can use to hit the ball.\n\nI'll pick the paddle.\n\nI'll drag the paddle to the\nbottom.\n\nI want the player to move the paddle side-to-side with the mouse\n\nSo I'll make the paddle go across the stage when the mouse moves\n\nand I'll add a green flag on top\n\nClick the green arrow to find out how to\nhit the ball with the paddle,\n\nadd a score, and more!"
+    },
+    {
+      "language": "zh-Hant",
+      "text": "你可以用 Scratch 來做個彈跳球類型的遊戲！\n\n裡頭有個會彈來彈去的球或其它的東西，\n\n然後用得分作為勝利的條件！\n\n首先，我們選個背景，\n\n我挑選這個。\n\n我們選個會彈來彈去的東西，\n\n我選的是這顆球，\n\n我們用這個程式積木讓球動起來，\n\n把它放到迴圈裡看看會發生什麼，\n\n球好像會卡在邊緣，\n\n加上「碰到邊緣就反彈」這個積木到迴圈裡，\n\n好棒棒，它可以不停地前後移動了。\n\n接著我們看看能不能調整反彈的角度，\n\n我們讓它面朝一個方向，\n\n讓它在綠旗被點擊時就開始執行，\n\n好了，接著來加入另一個角色，\n讓玩家能夠操控並與球互動，\n\n我要選這個當球拍，\n\n把球拍拖曳放到底部，\n\n我想讓玩家能透過滑鼠讓球拍左右平移，\n\n那就讓球拍跟著滑鼠游標移動，\n\n然後在最上頭放上當綠旗被點擊積木，\n\n點擊綠色的箭頭觀看每個步驟，\n\n想想看，還可以再多做些什麼！"
+    }
+  ],
+  "11-创建会说话的动画": [
+    {
+      "language": "eng",
+      "text": "With Scratch, you can make characters talk out loud!\n\nPerform a song - \"I'm the ghost rapper!\"\n\nTell a story - \"Let's go find it!\"\n\nor anything else you can imagine - \"Pass me the ball!\" \"Here it comes\"\n\nTo get started, click this button and add the \"Text to Speech\" blocks\n\nNow we can use these new blocks to make our characters talk.\n\n\"Hello\"\n\n\"Let's go!\"\n\nWe can change the voice and snap this block onto our \"speak\" block\n\n\"Let's go!\"\n\nLet's make the character talk when we click it\n\nWe can go to the Events category and add a \"when this sprite clicked\" block on top\n\n\"Let's go!\"\n\nLet's make our character move. We can go to the Motion category\n\nand add a \"glide 1 seconds to random position\" block.\n\n\"Let's go!\"\n\nWe can add a backdrop by clicking this button.\n\nYou can pick anything you want. I'll pick \"Nebula.\"\n\nLet's add another sprite. A sprite could be a character or an object.\n\nThere are lots of sprites to choose from.\nI'll pick the Robot.\n\nHow about we make this character perform a song?\n\nI'll go to the Sound tab and pick a sound from the sound library.\n\nThe Loops category has music. I'll pick \"Hip Hop\"\n\nI'll go back to the Code tab\n\nI'll add a \"when this sprite clicked\" block\n\nand make the Robot start playing the Hip Hop sound\n\nand I'll make it sing\n\n\"I am a robot, I like to dance a lot\"\n\"Beep boop bop\"\n\nClick the green arrow to see this code again,\n\nand explore what else you might add to your project!"
+    },
+    {
+      "language": "zh-Hant",
+      "text": "在 Scratch 上，你可以角色暢所欲言！\n\n唱首歌 - \"I'm the ghost rapper!\"\n\n說個故事 - \"I'm the ghost rapper!\"\n\n或是任何你想得到的 - \"Pass me the ball!\" \"Here it comes\"\n\n來開始吧，點擊按鈕，添加「文字轉語言」，\n\n這樣你就可以用這些新的積木來讓角色說話。\n\n\"Hello\"\n\n\"Let's go!\"\n\n我們可以改掉聲音，把它放到「唸出」積木上，\n\n\"Let's go!\"\n\n接著我們讓它在被點擊時發出聲音，\n\n我們可以把事件類的「當角色被點擊」積木放到最上面，\n\n\"Let's go!\"\n\n我們來讓角色移動，到動作類積木，\n\n找到「滑行 1 秒到隨機位置」積木。\n\n\"Let's go!\"\n\n要添加背景的話，點擊這個按鈕。\n\n選個你想要的，我選 Nebula（星雲）。\n\n再來添加其它角色，可以是人也可以是物，\n\n有很多讓你慢慢挑，\n我要選 Robot（機器人）。\n\n怎樣讓角色唱歌？\n\n我們到音效頁籤裡挑個聲音，在音效範例庫裡，\n\n循環類的音樂不錯喔，我要選 Hip Hop。\n\n接著我們切換回程式頁籤，\n\n我要添加「當角色被點擊」積木，\n\n然後讓機器人播放 Hip Hop 這首歌，\n\n這樣就讓它唱歌了，\n\n\"I am a robot, I like to dance a lot\"\n\"Beep boop bop\"\n\n點擊綠色的按鈕來觀看程式運行的如何，\n\n隨意的嘗試一下，看看還能加些什麼到你的專案！"
+    }
+  ],
+  "12-视频侦测": [
+    {
+      "language": "eng",
+      "text": "You can use your webcam to interact with your Scratch projects\n\nPet a virtual animal, pop balloons\n\nor anything else you can imagine!\n\nTo start, let's add the \"Video Sensing\" extension.\n\nAs you can see,\n\nIt turns on our webcam and gives us a new set of blocks to play with\n\nLet's start by making a simple project where we pet the cat\n\nI'll grab the \"When video motion is greater than 10\" block\n\nSo, the way this block works is it's\n\nMeasuring the amount of motion that happens underneath the sprite\n\nand it's measured on a scale of 0 to 100\n\n0 is no movement and 100 is as much movement as we can do\n\nLet's go ahead and stick with the default value of 10\n\nNext, I'll grab a \"Play sound until done\" block and attach it.\n\nLet's give it a shot.\n\nMaybe we'll try a higher value like 95 just to see what happens?\n\nOk, so nothing's happening\n\nYou really have to do a lot of motion. So maybe we go back to 10\n\nCool! I can't wait to see what you do with video sensing."
+    },
+    {
+      "language": "chi",
+      "text": "你可以使用网络摄像头与Scratch项目进行交互。\n\n抚摸一个虚拟宠物、戳破气球\n\n任何你能想到的事情！\n\n添加一个“视频侦测”扩展后开始。\n\n你可以看到，\n\n摄像头打开了，还出现了一些新积木。\n\n让我们从制作一个宠物猫的简单项目开始吧。\n\n我拿出一个「当视频运动\u0026gt;10」的积木。\n\n这个积木的工作方式是：\n\n测量角色所在位置的视频运动量，\n\n返回一个在0到100间的值。\n\n0意味着毫无运动，100意味着最大幅度的运动。\n\n让我们继续，使用默认值10\n\n接下来，拖一个「播放声音()等待播完」接在它下面。\n\n来试试！\n\n让我们试试一个更高的数值，比如“95”，会怎么样？\n\n哦，啥也没发生。\n\n你必须疯狂的动才行。我们还是把它调回10。\n\n太酷了！我想看看你还会用它做什么！"
+    }
+  ],
+  "13-冒险游戏动画1": [
+    {
+      "language": "eng",
+      "text": "With Scratch, you can animate an adventure game!\n\nI want Garnet to be my main character. You can pick anyone you want\n\nand if you can't see your character, click on their icon\n\nand you can make them show up or hide by clicking these buttons on and off.\n\nClick on the icon of your character,\n\nand now, you can program them to do things.\n\nIn Scratch, you drag out blocks of code from here,\n\nto make programs here,\n\nwhich will make things happen here, on the stage.\n\nNow, let's make our game! As you watch, you can pause the video, and try each step.\n\nFirst, go to the Looks category and drag out a say block to make your character say something.\n\nNow, I want to make my character follow the mouse\n\nTo do this, go to the Motion category, drag out the block that says \"glide 1 seconds to random position\"\n\nand choose \"mouse-pointer\" from the menu\n\nAttach this block under the \"say\" block\n\nCool, she talked and then went to my mouse-pointer once\n\nBut we want our main character to always follow our mouse-pointer\n\nTo do this, drag out a loop from the Control category\n\nWhen you put code in a loop, that code will happen over and over again\n\nAwesome, we can move our character with the mouse!\n\nYou can put in a smaller number like 0.3 if you want your character to move faster\n\nLet's attach this loop back under the \"say\" block\n\nand put a \"when green flag clicked\" block on top\n\nNow we can start the game by clicking the green flag\n\nLet's make our character collect items.\n\nClick on the icon of the item you want, and now you can program the item\n\nMake sure you click \"show\" to make your item show up\n\nWhat should we make the item do?\n\nWhen Garnet catches the gem, I want it to play a sound and go to a new random place.\n\nTo do this, go to the Control category and drag out a \"wait until\" block\n\nGo to the Sensing category and grab the block that says \"touching mouse-pointer\"\n\nand choose your main character from the menu\n\n(my main character is Garnet, so I'll choose Garnet, but if Finn was your main character, you'd choose Finn)\n\nAnd put that block inside the \"wait until\" block\n\nAdd a \"start sound\" block to make it play a sound\n\nAnd then add a \"go to random position\" block to make it go to a random place\n\nAnd let's add a green flag on top\n\nThe gem waits until Garnet touches it, then plays a sound and goes to a new place\n\nBut I want it to do this over and over again.\n\nSo drag out another \"forever\" loop and put the code inside\n\nWe've got a game!\n\nFinally, let's add a score.\n\nTo do this, go to the Variables category and create a variable called \"score\"\n\nDrag out a \"change variable\" block\n\nand choose \"score\"\n\nIf you put this code inside the loop, the score will increase every time your character catches the item\n\nAnd let's reset the score to zero when the game starts\n\nClick the green arrow to see each step,\n\nand to find out how to add more levels!"
+    },
+    {
+      "language": "zh-Hant",
+      "text": "在 Scratch 上，你可以創作屬於自己的冒險遊戲！\n\n我想讓 Garnet 當主角，你可以選你想要的。\n\n如果你沒看到角色，點擊它們的圖示。\n\n要讓它們顯示或隱藏，只要點擊上頭的可見度按鈕。\n\n現在點擊你的角色縮圖，\n\n就可以寫個程式讓它做點事。\n\n在 Scratch 裡，你可以從工具箱拖曳出要用的積木，\n\n然後在這裡編寫程式，\n\n這樣子，在舞台視窗就可以看到運行的情形。\n\n現在我們來做個遊戲！你可以隨時暫停影片，跟著一步步完成。\n\n首先，到外觀類拖曳「說出」積木，讓角色說些話。\n\n現在我想讓角色跟著滑鼠游標移動，\n\n怎麼做呢？移到動作類，拖曳出「滑行 1 秒到隨機位置」積木，\n\n接著從選單裡選擇「鼠標」，\n\n把它黏合到「說出」積木下。\n\n酷！她會說話，也能跟著鼠標動，不過只有一次，\n\n但我想主角一直跟著滑鼠游標，\n\n怎麼做？拖曳出重複積木，它在控制類，\n\n當你把程式放到迴圈裡頭，它就會不斷地運行。\n\n太棒 ler，我們可以用滑鼠控制角色了！\n\n你可以把數字變小，例如 0.3，如果你想要角色移動地快一點的話。\n\n我們把這個迴圈貼合到「說出」積木下，\n\n然後放到「當綠旗被點擊」積木到最上方，\n\n這樣我們就可以用綠旗按鈕啟動遊戲。\n\n接下來我們讓角色能收集物品，\n\n隨便挑個物品，然後準備在物品上寫程式，\n\n順道檢查一下角色是不是切換到顯示狀態。\n\n你想要物品做些什麼？\n\n當 Garnet 拿到寶石，我想它發出音效，然後跑到其它的位置。\n\n要完成這個，請到控制類中拖曳出「等待直到」積木，\n\n再到偵測類裡拖曳出「碰到鼠標？」積木，\n\n然後在選單找到你的主角名稱，\n\n（我的主角是 Garnet，所以我選 Garnet，你要選什麼？就看你的角色名稱是什麼）\n\n接著把積木塞到「等待直到」積木裡，\n\n添加一個「播放音效」積木讓它能播放音效，\n\n再來添加「定位到隨機位置」積木讓它在不同的地方出現，\n\n再把點擊綠旗的積木放到最上面。\n\n寶石在等到 Garnet 碰到後播放音效然後跑到一個新的地方，\n\n但是我想讓它一直不停的發生，\n\n所以用了另一個「重複」積木，放到程式裡，\n\n我開發了一個遊戲囉！\n\n最後，我們加個得分紀錄，\n\n怎麼弄？到變數類建立一個變數，名為 score，\n\n拖曳出「變數改變」積木，\n\n然後選擇 scroe，\n\n如果你把它放到迴圈裡，score 就會在每次角色碰到寶石時就增加。\n\n所以我們要在遊戲每次啟動時將得分歸零。\n\n點擊綠色的箭頭觀看每個步驟，\n\n然後想想看，要怎麼讓遊戲有下一關！"
+    }
+  ],
+  "13-冒险游戏动画2": [
+    {
+      "language": "eng",
+      "text": "Congratulations on making a game!\n\nWhat would you like to add to your project?\n\nExperiment with your code\n\nor try adding a new block\n\nAnd check out the Tutorials page for even more ideas and inspiration!"
+    },
+    {
+      "language": "zh-Hant",
+      "text": "恭喜啊，你做了個遊戲呢！\n\n你還想在專案上加些什麼？\n\n試驗一下你寫的程式，\n\n或者試著加入其它的積木，\n\n有空看看我們的教程頁面，你會有更多想法還有靈感。"
+    }
+  ],
+  "15-添加一个背景": [
+    {
+      "language": "eng",
+      "text": "Where do you want your project to take place?\n\nA soccer field, the ocean, at a concert?\n\nTo add a backdrop, click this button.\n\nI'll pick \"Space\"\n\nLet's add another.\n\nThis time I'll pick \"Spaceship\"\n\nUse the \"Switch backdrop block\" to pick which one to show\n\nLet's build a quick story.\n\nI'll start in space\n\nthen say \"Let's go to the spaceship\"\n\nand switch to the spaceship backdrop.\n\nWhat backdrops will you choose?"
+    },
+    {
+      "language": "chi",
+      "text": "你想让项目在哪里开始？\n\n在足球场、海洋里，还是音乐会上？\n\n点这个按钮为项目添加背景。\n\n我选择「太空」\n\n再添加一个背景。\n\n这次我选择「飞船」\n\n用「切换背景」积木选择要显示的背景\n\n咱们来编一个小故事。\n\n从太空开始\n\n然后说：「去太空船。」\n\n并换成飞船背景。\n\n你会选哪个背景呢？"
+    }
+  ],
+  "16-变大变小": [
+    {
+      "language": "eng",
+      "text": "With the change size block,\nyou can make your sprite get bigger or smaller\n\nTo keep going, you can use a repeat loop.\n\nOr, type in a minus sign to get\nsmaller and smaller\n\nTo reset size,\nyou can use the \"set size\" block.\n\n100 will get it back to the original size\n\nOr, try a bigger or smaller number\ndepending on what you want\n\nChoose your own sprite and try it out!"
+    },
+    {
+      "language": "chi",
+      "text": "用「将大小增加」积木，可以让你的角色变大变小。\n\n用重复积木让它持续。\n\n在前面加个负号让它越来越小。\n\n用「将大小设为」积木重置大小。\n\n用100让一个角色回到原本的大小。\n\n根据你的需要，尝试一个更大或更小的数字。\n\n选择你自己的角色试试！"
+    }
+  ],
+  "17-滑来滑去": [
+    {
+      "language": "eng",
+      "text": "With glide blocks, you can move your\ncharacter from place to place.\n\nPlace your sprite at a location\nand then drag out a glide block.\n\nWhen you click the block the sprite\nwill glide to that point.\n\nTo glide to a second location,\n\nplace the sprite at a new point and\ndrag out another glide block.\n\nTo set a starting point,\n\nplace the character where you want to start\nand drag out a go to block and put it on top\n\nFinally, I'll add a green flag\non top to start the script\n\nChoose a character and start gliding!"
+    },
+    {
+      "language": "chi",
+      "text": "用滑行积木，你可以让角色在舞台上滑来滑去。\n\n把你的角色拖到一个位置，拖出一个滑行积木。\n\n当你点击这个积木，这个角色会滑到那个位置。\n\n要滑到另一个位置，\n\n把角色放在一个新的点，再拖出一个滑行积木。\n\n要设置一个开始点，\n\n将这个角色放在你想开始的地方，\n然后拖出一个移到积木放在最上面。\n\n最后，再加一个绿旗在最上面用来开始这段脚本。\n\n选一个角色滑起来！"
+    }
+  ],
+  "18-录制声音": [
+    {
+      "language": "eng",
+      "text": "\"I heard there's magic in the cave.\"\n\n\"Oh hi!\"\n\nTo record a sound, go to the Sound tab and click Record.\n\n\"Boooo!\"\n\nName the sound.\n\nNow, in the Sound block we can choose it.\n\nand then play it.\n\n\"Boooo!\"\n\nWhat sounds will you record?"
+    },
+    {
+      "language": "chi",
+      "text": "「我听说洞里有魔法。」\n\n「嗨！」\n\n要录制声音，请打开「声音」页签并点击录制。\n\n「砰！」\n\n给录音起个名字。\n\n现在，在「播放声音」积木中就可以选择它了。\n\n然后播放它。\n\n「砰！」\n\n你想录制什么声音呢？"
+    }
+  ],
+  "19-让字母旋转": [
+    {
+      "language": "eng",
+      "text": "To spin your sprite, use a \"turn block\"\n\nTo keep going, use a \"forever loop\"\n\nTo turn slower, try a smaller number\n\nor a bigger number to turn faster.\n\nTo reset to the direction of the sprite,\nuse the \"point in direction\" block.\n\nChoose a sprite and start spinning!"
+    },
+    {
+      "language": "chi",
+      "text": "让角色转起来，要用「左转」和「右转」积木。\n\n用「重复执行」让它一直转下去。\n\n要慢点转，试试小点的数字。\n\n越大的数字转的越快。\n\n要重置一个角色的方向，用「面向」积木。\n\n选一个角色让它转起来！"
+    }
+  ],
+  "20-隐藏和出现": [
+    {
+      "language": "eng",
+      "text": "You can use the hide and show blocks\nto make a sprite disappear and appear.\n\nYou could start by hiding your sprite\n\nthen wait, one second\n\nAnd then show up again\n\nPerhaps I'll add a sound.\n\nYou what will you show and hide?"
+    },
+    {
+      "language": "chi",
+      "text": "你可以使用「隐藏」和「显示」积木让一个角色消失和出现。\n\n你可以先隐藏一个角色。\n\n然后，等待一秒，\n\n再让它出现。\n\n也许还可以加个声音。\n\n你想显示和隐藏什么角色？"
+    }
+  ],
+  "21-角色动画2": [
+    {
+      "language": "eng",
+      "text": "You can change costumes to animate your character!\n\nEvery sprite has multiple costumes.\n\nThis bird has two:\n\"wings up\" and \"wings down\"\n\nUse the \"next costume\" block to switch costumes.\n\nTo keep going, you can use a repeat loop.\n\nAdd a wait block to slow it down.\n\nIf you want to show a specific costume,\nuse the \"switch costume\" block.\n\nWhat will you create?"
+    },
+    {
+      "language": "chi",
+      "text": "你可以变换角色的造型让它动起来!\n\n每个角色都有多个造型。\n\n鸟有两个造型：翅膀往上和翅膀往下。\n\n用「下一个造型」积木让它改变造型。\n\n用一个重复积木让它持续改变造型。\n\n用一个等待积木让它慢下来。\n\n如果你想切换到某个造型，\n用「换成造型」积木。\n\n你可以创造出什么？"
+    }
+  ],
+  "22-使用方向键": [
+    {
+      "language": "eng",
+      "text": "Want to move your character using arrow keys?\n\nTo move the character up use \"change Y\"\n\nTo make it move down use a negative number.\n\nTo control with an arrow key,\nadd a \"When key pressed\" block.\n\nI'll pick the up arrow for moving up\n\nand down arrow for moving down.\n\nTo go to the right, I'll use \"change X\"\n\nTo move it left, I'll use minus ten.\n\nPick your own character and start moving!"
+    },
+    {
+      "language": "chi",
+      "text": "想用方向键控制角色移动？\n\n用「将y坐标增加」积木使角色向上移动\n\n用负数使角色向下移动。\n\n添加「当按下……键」积木，用方向键进行控制。\n\n用↑控制角色向上移动\n\n用↓控制角色向下移动。\n\n用「将x坐标增加」使角色向右移动\n\n用-10使角色向左移动。\n\n挑一个喜欢的角色，让它动起来吧！"
+    }
+  ],
+  "23-添加一些效果": [
+    {
+      "language": "eng",
+      "text": "Want to add visual effects to your project?\n\nTry using the \"Change color effect\" block\n\nTo remove the effect,\nuse the clear graphic effects block.\n\nTry other effects, like whirl.\n\nTo make it happen more than once,\nuse a repeat loop.\n\nMaybe I'll add a sound at the end?\n\nExperiment with different effects in your projects!"
+    },
+    {
+      "language": "chi",
+      "text": "想要给你的角色加上视觉效果吗？\n\n试试「将(颜色)特效增加」积木。\n\n要清除特效，用「清除图形特效」积木。\n\n试试其他特效，比如漩涡。\n\n用一个重复积木让特效多次出现。\n\n最后加个声音怎么样？\n\n在你的作品里尝试不同的特效吧！"
+    }
+  ]
+}

@@ -6,10 +6,9 @@
     "build": "npm run build:web && npm run build:electron",
     "build:web": "webpack --inline --progress --config build/web.prod.conf.js",
     "build:electron": "webpack --inline --progress --config build/electron.prod.conf.js",
-    "copy": "node build/copy.js",
-    "release": "git subtree push --prefix=release/web origin master"
+    "release": "git subtree push --prefix=release/scratch origin master"
   },
-  "author": "wawjqyh",
+  "author": "Troy",
   "license": "ISC",
   "main": "index.js",
   "devDependencies": {

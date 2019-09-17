@@ -12,11 +12,15 @@ const webpackConfig = merge(prodConfig, {
 
   plugins: [
     new CleanWebpackPlugin({
-      cleanOnceBeforeBuildPatterns: [path.resolve(__dirname, '../release/scratch')],
-      cleanAfterEveryBuildPatterns: [path.resolve(__dirname, '../release/scratch/static')]
+      cleanOnceBeforeBuildPatterns: [path.resolve(__dirname, '../release/scratch')]
+      // cleanAfterEveryBuildPatterns: [path.resolve(__dirname, '../release/scratch/static')]
     }),
 
     new CopyWebpackPlugin([
+      {
+        from: 'node_modules/scratch-blocks/media',
+        to: 'static/blocks-media'
+      },
       {
         from: 'release/package.json',
         to: ''

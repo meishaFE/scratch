@@ -17,15 +17,15 @@ import SoundTab from '../../containers/sound-tab.jsx';
 import StageWrapper from '../../containers/stage-wrapper.jsx';
 import Loader from '../loader/loader.jsx';
 import Box from '../box/box.jsx';
-import MenuBar from '../menu-bar/menu-bar.jsx';
+// import MenuBar from '../menu-bar/menu-bar.jsx';
 import CostumeLibrary from '../../containers/costume-library.jsx';
 import BackdropLibrary from '../../containers/backdrop-library.jsx';
 import Watermark from '../../containers/watermark.jsx';
 
 import Backpack from '../../containers/backpack.jsx';
 import WebGlModal from '../../containers/webgl-modal.jsx';
-import TipsLibrary from '../../containers/tips-library.jsx';
-import Cards from '../../containers/cards.jsx';
+// import TipsLibrary from '../../containers/tips-library.jsx';
+// import Cards from '../../containers/cards.jsx';
 import Alerts from '../../containers/alerts.jsx';
 import DragLayer from '../../containers/drag-layer.jsx';
 import ConnectionModal from '../../containers/connection-modal.jsx';
@@ -171,12 +171,12 @@ const GUIComponent = props => {
                 {isRendererSupported ? null : (
                     <WebGlModal isRtl={isRtl} />
                 )}
-                {tipsLibraryVisible ? (
+                {/* tipsLibraryVisible ? (
                     <TipsLibrary />
-                ) : null}
-                {cardsVisible ? (
+                ) : null */}
+                {/* cardsVisible ? (
                     <Cards />
-                ) : null}
+                ) : null */}
                 {alertsVisible ? (
                     <Alerts className={styles.alertsContainer} />
                 ) : null}
@@ -224,7 +224,7 @@ const GUIComponent = props => {
                     onToggleLoginOpen={onToggleLoginOpen}
                     onUpdateProjectTitle={onUpdateProjectTitle}
                 /> */}
-                <div style={{ height: '48px' }} />
+                <div style={{ height: '76px' }} />
                 
                 <Box className={styles.bodyWrapper}>
                     <Box className={styles.flexWrapper}>
