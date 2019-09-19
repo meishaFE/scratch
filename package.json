@@ -3,12 +3,14 @@
   "version": "1.0.0",
   "description": "scratch组件库",
   "scripts": {
-    "build": "npm run build:web && npm run build:electron",
+    "dev": "webpack --watch --inline --progress --config build/webpack.dev.conf.js",
+    "build": "npm run build:web && npm run build:electron && npm run copy",
     "build:web": "webpack --inline --progress --config build/web.prod.conf.js",
     "build:electron": "webpack --inline --progress --config build/electron.prod.conf.js",
-    "release": "git subtree push --prefix=release/scratch origin master"
+    "copy": "node build/copy.js",
+    "release": "git subtree push --prefix=release/web origin master"
   },
-  "author": "Troy",
+  "author": "wawjqyh",
   "license": "ISC",
   "main": "index.js",
   "devDependencies": {
