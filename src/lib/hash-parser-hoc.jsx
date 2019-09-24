@@ -22,19 +22,20 @@ const HashParserHOC = function (WrappedComponent) {
             ]);
         }
         componentDidMount () {
-            window.addEventListener('hashchange', this.handleHashChange);
+            // window.addEventListener('hashchange', this.handleHashChange);
+            // this.handleHashChange();
             this.handleHashChange();
         }
-        componentDidUpdate (prevProps) {
+        /* componentDidUpdate (prevProps) {
             // if we are newly fetching a non-hash project...
             if (this.props.isFetchingWithoutId && !prevProps.isFetchingWithoutId) {
                 // ...clear the hash from the url
                 history.pushState('new-project', 'new-project',
                     window.location.pathname + window.location.search);
             }
-        }
+        } */
         componentWillUnmount () {
-            window.removeEventListener('hashchange', this.handleHashChange);
+            // window.removeEventListener('hashchange', this.handleHashChange);
         }
         handleHashChange () {
             const hashMatch = window.location.hash.match(/#(\d+)/);
