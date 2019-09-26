@@ -24,7 +24,6 @@ const HashParserHOC = function (WrappedComponent) {
         componentDidMount () {
             // mscode修改
             // window.addEventListener('hashchange', this.handleHashChange);
-            // this.handleHashChange();
             this.handleHashChange();
         }
         // mscode修改

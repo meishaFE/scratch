@@ -1,4 +1,4 @@
-import GoogleAnalytics from 'react-ga';
+/* import GoogleAnalytics from 'react-ga';
 
 GoogleAnalytics.initialize(process.env.GA_ID || window.GA_ID, {
     debug: (process.env.NODE_ENV !== 'production'),
@@ -7,4 +7,9 @@ GoogleAnalytics.initialize(process.env.GA_ID || window.GA_ID, {
     forceSSL: true
 });
 
-export default GoogleAnalytics;
+export default GoogleAnalytics; */
+
+export default {
+    pageview() {},
+    event() {}
+  };

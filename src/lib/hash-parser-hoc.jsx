@@ -22,10 +22,12 @@ const HashParserHOC = function (WrappedComponent) {
             ]);
         }
         componentDidMount () {
-            window.addEventListener('hashchange', this.handleHashChange);
+            // mscode修改
+            // window.addEventListener('hashchange', this.handleHashChange);
             this.handleHashChange();
         }
-        componentDidUpdate (prevProps) {
+        // mscode修改
+        /* componentDidUpdate (prevProps) {
             // if we are newly fetching a non-hash project...
             if (this.props.isFetchingWithoutId && !prevProps.isFetchingWithoutId) {
                 // ...clear the hash from the url
@@ -35,7 +37,7 @@ const HashParserHOC = function (WrappedComponent) {
         }
         componentWillUnmount () {
             window.removeEventListener('hashchange', this.handleHashChange);
-        }
+        } */
         handleHashChange () {
             const hashMatch = window.location.hash.match(/#(\d+)/);
             const hashProjectId = hashMatch === null ? defaultProjectId : hashMatch[1];

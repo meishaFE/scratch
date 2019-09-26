@@ -129,8 +129,9 @@ const ProjectFetcherHOC = function (WrappedComponent) {
         reduxProjectId: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
         setProjectId: PropTypes.func
     };
+    // mscode修改
     ProjectFetcherComponent.defaultProps = {
-        assetHost: 'https://assets.scratch.mit.edu',
+        assetHost: 'https://cdn.meishakeji.com',
         projectHost: 'https://projects.scratch.mit.edu'
     };
 
