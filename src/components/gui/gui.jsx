@@ -17,17 +17,15 @@ import SoundTab from '../../containers/sound-tab.jsx';
 import StageWrapper from '../../containers/stage-wrapper.jsx';
 import Loader from '../loader/loader.jsx';
 import Box from '../box/box.jsx';
-// mscode修改
-// import MenuBar from '../menu-bar/menu-bar.jsx';
+import MenuBar from '../menu-bar/menu-bar.jsx';
 import CostumeLibrary from '../../containers/costume-library.jsx';
 import BackdropLibrary from '../../containers/backdrop-library.jsx';
 import Watermark from '../../containers/watermark.jsx';
 
 import Backpack from '../../containers/backpack.jsx';
 import WebGlModal from '../../containers/webgl-modal.jsx';
-// mscode修改
-// import TipsLibrary from '../../containers/tips-library.jsx';
-// import Cards from '../../containers/cards.jsx';
+import TipsLibrary from '../../containers/tips-library.jsx';
+import Cards from '../../containers/cards.jsx';
 import Alerts from '../../containers/alerts.jsx';
 import DragLayer from '../../containers/drag-layer.jsx';
 import ConnectionModal from '../../containers/connection-modal.jsx';
@@ -68,8 +66,10 @@ const GUIComponent = props => {
         backpackVisible,
         blocksTabVisible,
         cardsVisible,
+        canChangeLanguage,
         canCreateNew,
         canEditTitle,
+        canManageFiles,
         canRemix,
         canSave,
         canCreateCopy,
@@ -87,6 +87,7 @@ const GUIComponent = props => {
         isRtl,
         isShared,
         loading,
+        logo,
         renderLogin,
         onClickAccountNav,
         onCloseAccountNav,
@@ -173,14 +174,12 @@ const GUIComponent = props => {
                 {isRendererSupported ? null : (
                     <WebGlModal isRtl={isRtl} />
                 )}
-                {/* // mscode修改
-                    tipsLibraryVisible ? (
+                {tipsLibraryVisible ? (
                     <TipsLibrary />
-                ) : null */}
-                {/* // mscode修改
-                    cardsVisible ? (
+                ) : null}
+                {cardsVisible ? (
                     <Cards />
-                ) : null */}
+                ) : null}
                 {alertsVisible ? (
                     <Alerts className={styles.alertsContainer} />
                 ) : null}
@@ -201,21 +200,23 @@ const GUIComponent = props => {
                         onRequestClose={onRequestCloseBackdropLibrary}
                     />
                 ) : null}
-                {/* // mscode修改
-                    <MenuBar
+                <MenuBar
                     accountNavOpen={accountNavOpen}
                     authorId={authorId}
                     authorThumbnailUrl={authorThumbnailUrl}
                     authorUsername={authorUsername}
+                    canChangeLanguage={canChangeLanguage}
                     canCreateCopy={canCreateCopy}
                     canCreateNew={canCreateNew}
                     canEditTitle={canEditTitle}
+                    canManageFiles={canManageFiles}
                     canRemix={canRemix}
                     canSave={canSave}
                     canShare={canShare}
                     className={styles.menuBarPosition}
                     enableCommunity={enableCommunity}
                     isShared={isShared}
+                    logo={logo}
                     renderLogin={renderLogin}
                     showComingSoon={showComingSoon}
                     onClickAccountNav={onClickAccountNav}
@@ -228,9 +229,7 @@ const GUIComponent = props => {
                     onShare={onShare}
                     onToggleLoginOpen={onToggleLoginOpen}
                     onUpdateProjectTitle={onUpdateProjectTitle}
-                /> */}
-                <div style={{ height: '76px' }} />
-                
+                />
                 <Box className={styles.bodyWrapper}>
                     <Box className={styles.flexWrapper}>
                         <Box className={styles.editorWrapper}>
@@ -366,9 +365,11 @@ GUIComponent.propTypes = {
     backpackVisible: PropTypes.bool,
     basePath: PropTypes.string,
     blocksTabVisible: PropTypes.bool,
+    canChangeLanguage: PropTypes.bool,
     canCreateCopy: PropTypes.bool,
     canCreateNew: PropTypes.bool,
     canEditTitle: PropTypes.bool,
+    canManageFiles: PropTypes.bool,
     canRemix: PropTypes.bool,
     canSave: PropTypes.bool,
     canShare: PropTypes.bool,
@@ -385,6 +386,7 @@ GUIComponent.propTypes = {
     isRtl: PropTypes.bool,
     isShared: PropTypes.bool,
     loading: PropTypes.bool,
+    logo: PropTypes.string,
     onActivateCostumesTab: PropTypes.func,
     onActivateSoundsTab: PropTypes.func,
     onActivateTab: PropTypes.func,
@@ -418,8 +420,10 @@ GUIComponent.defaultProps = {
     backpackHost: null,
     backpackVisible: false,
     basePath: './',
+    canChangeLanguage: true,
     canCreateNew: false,
     canEditTitle: false,
+    canManageFiles: true,
     canRemix: false,
     canSave: false,
     canCreateCopy: false,

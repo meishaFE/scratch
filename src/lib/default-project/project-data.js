@@ -74,51 +74,33 @@ const projectData = translateFunction => {
                 currentCostume: 0,
                 costumes: [
                     {
-                        assetId: 'f49719e8f2440f5d328f2604e97eb71d',
+                        assetId: 'b7853f557e4426412e64bb3da6531a99',
                         name: translator(messages.costume, {index: 1}),
                         bitmapResolution: 1,
-                        md5ext: 'f49719e8f2440f5d328f2604e97eb71d.svg',
+                        md5ext: 'b7853f557e4426412e64bb3da6531a99.svg',
                         dataFormat: 'svg',
-                        rotationCenterX: 63,
-                        rotationCenterY: 67
+                        rotationCenterX: 48,
+                        rotationCenterY: 50
                     },
                     {
-                        assetId: '1af6b3af3bf2cda862bbe01034a336bb',
+                        assetId: 'e6ddc55a6ddd9cc9d84fe0b4c21e016f',
                         name: translator(messages.costume, {index: 2}),
                         bitmapResolution: 1,
-                        md5ext: '1af6b3af3bf2cda862bbe01034a336bb.svg',
+                        md5ext: 'e6ddc55a6ddd9cc9d84fe0b4c21e016f.svg',
                         dataFormat: 'svg',
-                        rotationCenterX: 70,
-                        rotationCenterY: 68
-                    },
-                    {
-                        assetId: 'e83b30a4517bbe155e2b4a6367c8f70b',
-                        name: translator(messages.costume, {index: 3}),
-                        bitmapResolution: 1,
-                        md5ext: 'e83b30a4517bbe155e2b4a6367c8f70b.svg',
-                        dataFormat: 'svg',
-                        rotationCenterX: 68,
-                        rotationCenterY: 68
-                    },
-                    {
-                        assetId: '8244f1fb159237179d1caaa69c070060',
-                        name: translator(messages.costume, {index: 4}),
-                        bitmapResolution: 1,
-                        md5ext: '8244f1fb159237179d1caaa69c070060.svg',
-                        dataFormat: 'svg',
-                        rotationCenterX: 64,
-                        rotationCenterY: 68
+                        rotationCenterX: 46,
+                        rotationCenterY: 53
                     }
                 ],
                 sounds: [
                     {
-                        assetId: '83a9787d4cb6f3b7632b4ddfebf74367',
-                        name: translator(messages.pop),
+                        assetId: '83c36d806dc92327b9e7049a565c6bff',
+                        name: translator(messages.meow),
                         dataFormat: 'wav',
                         format: '',
-                        rate: 11025,
-                        sampleCount: 258,
-                        md5ext: '83a9787d4cb6f3b7632b4ddfebf74367.wav'
+                        rate: 22050,
+                        sampleCount: 18688,
+                        md5ext: '83c36d806dc92327b9e7049a565c6bff.wav'
                     }
                 ],
                 volume: 100,

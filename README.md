@@ -20,8 +20,11 @@
 - `containers/modal.jsx` 去除pushState
 
 - `components/gui/gui.jsx` 更改 menubar,去除教程
-- `components/monitor` 修改样式
-- `components/question` 修改样式
+- `components/gui/gui.css`
+- `components/monitor/list-monitor.jsx`
+- `components/monitor/monitor.css` 修改样式
+- `components/question/question.jsx` 
+- `components/question/question.css` 修改样式
 
 - `lib/default-project` 修改默认项目（替换文件夹下的文件）
 - `lib/libraries` 增加素材

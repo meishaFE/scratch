@@ -24,7 +24,6 @@ const LocalizationHOC = function (WrappedComponent) {
                 onSetLanguage, // eslint-disable-line no-unused-vars
                 ...componentProps
             } = this.props;
-                        
             return (
                 <ConnectedIntlProvider>
                     <WrappedComponent {...componentProps} />

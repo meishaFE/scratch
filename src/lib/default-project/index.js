@@ -2,11 +2,10 @@ import projectData from './project-data';
 
 /* eslint-disable import/no-unresolved */
 import popWav from '!arraybuffer-loader!./83a9787d4cb6f3b7632b4ddfebf74367.wav';
+import meowWav from '!arraybuffer-loader!./83c36d806dc92327b9e7049a565c6bff.wav';
 import backdrop from '!raw-loader!./cd21514d0531fdffb22204e0ec5ed84a.svg';
-import costume1 from '!raw-loader!./f49719e8f2440f5d328f2604e97eb71d.svg';
-import costume2 from '!raw-loader!./1af6b3af3bf2cda862bbe01034a336bb.svg';
-import costume3 from '!raw-loader!./e83b30a4517bbe155e2b4a6367c8f70b.svg';
-import costume4 from '!raw-loader!./8244f1fb159237179d1caaa69c070060.svg';
+import costume1 from '!raw-loader!./b7853f557e4426412e64bb3da6531a99.svg';
+import costume2 from '!raw-loader!./e6ddc55a6ddd9cc9d84fe0b4c21e016f.svg';
 /* eslint-enable import/no-unresolved */
 
 const defaultProject = translator => {
@@ -31,30 +30,25 @@ const defaultProject = translator => {
         dataFormat: 'WAV',
         data: new Uint8Array(popWav)
     }, {
+        id: '83c36d806dc92327b9e7049a565c6bff',
+        assetType: 'Sound',
+        dataFormat: 'WAV',
+        data: new Uint8Array(meowWav)
+    }, {
         id: 'cd21514d0531fdffb22204e0ec5ed84a',
         assetType: 'ImageVector',
         dataFormat: 'SVG',
         data: encoder.encode(backdrop)
     }, {
-        id: 'f49719e8f2440f5d328f2604e97eb71d',
+        id: 'b7853f557e4426412e64bb3da6531a99',
         assetType: 'ImageVector',
         dataFormat: 'SVG',
         data: encoder.encode(costume1)
     }, {
-        id: '1af6b3af3bf2cda862bbe01034a336bb',
+        id: 'e6ddc55a6ddd9cc9d84fe0b4c21e016f',
         assetType: 'ImageVector',
         dataFormat: 'SVG',
         data: encoder.encode(costume2)
-    }, {
-        id: 'e83b30a4517bbe155e2b4a6367c8f70b',
-        assetType: 'ImageVector',
-        dataFormat: 'SVG',
-        data: encoder.encode(costume3)
-    }, {
-        id: '8244f1fb159237179d1caaa69c070060',
-        assetType: 'ImageVector',
-        dataFormat: 'SVG',
-        data: encoder.encode(costume4)
     }];
 };
 
