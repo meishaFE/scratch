@@ -49,8 +49,10 @@ const messages = defineMessages({
 
 class GUI extends React.Component {
     componentDidMount () {
+        // mscode修改
         const root = document.getElementById('root');
         if (root) ReactModal.setAppElement(root);
+
         setIsScratchDesktop(this.props.isScratchDesktop);
         this.setReduxTitle(this.props.projectTitle);
         this.props.onStorageInit(storage);

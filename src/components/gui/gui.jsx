@@ -17,6 +17,7 @@ import SoundTab from '../../containers/sound-tab.jsx';
 import StageWrapper from '../../containers/stage-wrapper.jsx';
 import Loader from '../loader/loader.jsx';
 import Box from '../box/box.jsx';
+// mscode修改
 // import MenuBar from '../menu-bar/menu-bar.jsx';
 import CostumeLibrary from '../../containers/costume-library.jsx';
 import BackdropLibrary from '../../containers/backdrop-library.jsx';
@@ -24,6 +25,7 @@ import Watermark from '../../containers/watermark.jsx';
 
 import Backpack from '../../containers/backpack.jsx';
 import WebGlModal from '../../containers/webgl-modal.jsx';
+// mscode修改
 // import TipsLibrary from '../../containers/tips-library.jsx';
 // import Cards from '../../containers/cards.jsx';
 import Alerts from '../../containers/alerts.jsx';
@@ -171,10 +173,12 @@ const GUIComponent = props => {
                 {isRendererSupported ? null : (
                     <WebGlModal isRtl={isRtl} />
                 )}
-                {/* tipsLibraryVisible ? (
+                {/* // mscode修改
+                    tipsLibraryVisible ? (
                     <TipsLibrary />
                 ) : null */}
-                {/* cardsVisible ? (
+                {/* // mscode修改
+                    cardsVisible ? (
                     <Cards />
                 ) : null */}
                 {alertsVisible ? (
@@ -197,7 +201,8 @@ const GUIComponent = props => {
                         onRequestClose={onRequestCloseBackdropLibrary}
                     />
                 ) : null}
-                {/* <MenuBar
+                {/* // mscode修改
+                    <MenuBar
                     accountNavOpen={accountNavOpen}
                     authorId={authorId}
                     authorThumbnailUrl={authorThumbnailUrl}

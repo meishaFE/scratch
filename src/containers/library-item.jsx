@@ -87,6 +87,7 @@ class LibraryItem extends React.PureComponent {
     }
     render () {
         const iconMd5 = this.curIconMd5();
+        // mscode 修改
         const iconURL = iconMd5 ?
             `http://cdn.meishakeji.com/mscode/assets/${iconMd5}` :
             this.props.iconRawURL;

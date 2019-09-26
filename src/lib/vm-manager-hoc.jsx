@@ -52,7 +52,7 @@ const vmManagerHOC = function (WrappedComponent) {
             }
         }
 
-        // mscode
+        // mscode修改
         // 修改了加载项目的逻辑
         async loadProject () {
             try {

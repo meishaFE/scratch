@@ -22,10 +22,12 @@ const HashParserHOC = function (WrappedComponent) {
             ]);
         }
         componentDidMount () {
+            // mscode修改
             // window.addEventListener('hashchange', this.handleHashChange);
             // this.handleHashChange();
             this.handleHashChange();
         }
+        // mscode修改
         /* componentDidUpdate (prevProps) {
             // if we are newly fetching a non-hash project...
             if (this.props.isFetchingWithoutId && !prevProps.isFetchingWithoutId) {
@@ -33,10 +35,10 @@ const HashParserHOC = function (WrappedComponent) {
                 history.pushState('new-project', 'new-project',
                     window.location.pathname + window.location.search);
             }
-        } */
-        componentWillUnmount () {
-            // window.removeEventListener('hashchange', this.handleHashChange);
         }
+        componentWillUnmount () {
+            window.removeEventListener('hashchange', this.handleHashChange);
+        } */
         handleHashChange () {
             const hashMatch = window.location.hash.match(/#(\d+)/);
             const hashProjectId = hashMatch === null ? defaultProjectId : hashMatch[1];

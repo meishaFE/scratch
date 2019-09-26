@@ -84,6 +84,7 @@ const AppStateHOC = function (WrappedComponent, localesOnly) {
                 enhancer
             );
 
+            // mscode修改
             // 将store暴露到全局
             window.scratchStore = this.store;
             props.onInitStore();
