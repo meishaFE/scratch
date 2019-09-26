@@ -35,6 +35,8 @@
 - `lib/storage.js` 更改cdn地址
 - `lib/vm-manager-hoc.jsx` 增加加载缓存项目
 
+- `node_modules/scratch-render/src/SVGSkin.js` 捕获错误
+
 打包注意事项：
 
 - 打包时会会把打包后的文件复制到开发环境，注意修改路径

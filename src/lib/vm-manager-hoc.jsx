@@ -95,6 +95,8 @@ const vmManagerHOC = function (WrappedComponent) {
                 /* eslint-enable no-unused-vars */
                 isLoadingWithId: isLoadingWithIdProp,
                 vm,
+                // mscode修改
+                loadCacheProject,
                 ...componentProps
             } = this.props;
             return (
