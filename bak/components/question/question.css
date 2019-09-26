@@ -1,0 +1,85 @@
+@import "../../css/units.css";
+@import "../../css/colors.css";
+
+.question-container {
+    margin: 7px;
+    border: 1px solid $ui-black-transparent;
+    border-radius: 8px;
+    border-width: 2px;
+    padding: 10px;
+    background: white;
+}
+
+.question-label {
+    font-size: 12px;
+    font-weight: bold;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: $text-primary;
+    padding-bottom: 7px;
+}
+
+.question-input {
+    display: flex; /* Keeps the input from going outside this container */
+    position: relative;
+}
+
+.question-submit-button {
+    position: absolute;
+    top: 6px;
+    right: 5px;
+
+    width: 20px;
+    height: 20px;
+
+    border: none;
+    border-radius: 100%;
+
+    color: white;
+    background: $motion-primary;
+}
+
+/* Input overrides: width, font-weight, focus outline and padding */
+.question-input > input {
+    width: 100%;
+    font-weight: normal;
+}
+
+[dir="ltr"] .question-input > input {
+    padding: 0 28px 0 10px; /* To make room for the submit button */
+}
+
+[dir="rtl"] .question-input > input {
+    padding: 0 10px 0 28px; /* To make room for the submit button */
+}
+
+.question-input > input:focus {
+    box-shadow: 0px 0px 0px 3px $motion-transparent;
+}
+
+.question-submit-button-icon {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    right: -7px;
+    left: -7px;
+}
+
+.qInput {
+    height: 32px;
+    padding: 0 30px 0 10px;
+    font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: #575e75;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: 16px;
+    outline: none;
+    cursor: text;
+    transition: .25s ease-out;
+    box-shadow: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    min-width: 0;
+    user-select: auto !important;
+}
