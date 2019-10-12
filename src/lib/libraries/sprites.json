@@ -1,5 +1,303 @@
 [
     {
+        "name": "三角龙",
+        "md5": "f49719e8f2440f5d328f2604e97eb71d.svg",
+        "type": "sprite",
+        "tags": [
+            "animals",
+            "dinosaur",
+            "triceratops",
+            "alex eben meyer"
+        ],
+        "info": [
+            0,
+            4,
+            1
+        ],
+        "json": {
+            "objName": "三角龙",
+            "sounds": [
+                {
+                    "soundName": "pop",
+                    "soundID": -1,
+                    "md5": "83a9787d4cb6f3b7632b4ddfebf74367.wav",
+                    "sampleCount": 258,
+                    "rate": 11025,
+                    "format": ""
+                }
+            ],
+            "costumes": [
+                {
+                    "costumeName": "三角龙-a",
+                    "baseLayerID": -1,
+                    "baseLayerMD5": "f49719e8f2440f5d328f2604e97eb71d.svg",
+                    "bitmapResolution": 1,
+                    "rotationCenterX": 63,
+                    "rotationCenterY": 67
+                },
+                {
+                    "costumeName": "三角龙-b",
+                    "baseLayerID": -1,
+                    "baseLayerMD5": "1af6b3af3bf2cda862bbe01034a336bb.svg",
+                    "bitmapResolution": 1,
+                    "rotationCenterX": 76,
+                    "rotationCenterY": 67
+                },
+                {
+                    "costumeName": "三角龙-c",
+                    "baseLayerID": -1,
+                    "baseLayerMD5": "e83b30a4517bbe155e2b4a6367c8f70b.svg",
+                    "bitmapResolution": 1,
+                    "rotationCenterX": 64,
+                    "rotationCenterY": 67
+                },
+                {
+                    "costumeName": "三角龙-d",
+                    "baseLayerID": -1,
+                    "baseLayerMD5": "8244f1fb159237179d1caaa69c070060.svg",
+                    "bitmapResolution": 1,
+                    "rotationCenterX": 73,
+                    "rotationCenterY": 67
+                }
+            ],
+            "currentCostumeIndex": 0,
+            "scratchX": 10,
+            "scratchY": 26,
+            "scale": 1,
+            "direction": 90,
+            "rotationStyle": "normal",
+            "isDraggable": false,
+            "visible": true,
+            "spriteInfo": {}
+        }
+    },
+    {
+        "name": "霸王龙",
+        "md5": "d87b5e3c45f5d234c7aa47107c788f18.svg",
+        "type": "sprite",
+        "tags": [
+            "animals",
+            "dinosaur",
+            "tyrannosaurus",
+            "t-rex",
+            "trex",
+            "alex eben meyer"
+        ],
+        "info": [
+            0,
+            4,
+            1
+        ],
+        "json": {
+            "objName": "霸王龙",
+            "sounds": [
+                {
+                    "soundName": "pop",
+                    "soundID": -1,
+                    "md5": "83a9787d4cb6f3b7632b4ddfebf74367.wav",
+                    "sampleCount": 258,
+                    "rate": 11025,
+                    "format": ""
+                }
+            ],
+            "costumes": [
+                {
+                    "costumeName": "霸王龙-a",
+                    "baseLayerID": 0,
+                    "baseLayerMD5": "d87b5e3c45f5d234c7aa47107c788f18.svg",
+                    "bitmapResolution": 1,
+                    "rotationCenterX": 60,
+                    "rotationCenterY": 52
+                },
+                {
+                    "costumeName": "霸王龙-b",
+                    "baseLayerID": -1,
+                    "baseLayerMD5": "cfe906702bbd30bc3bb8acb53079b6b0.svg",
+                    "bitmapResolution": 1,
+                    "rotationCenterX": 87,
+                    "rotationCenterY": 52
+                },
+                {
+                    "costumeName": "霸王龙-c",
+                    "baseLayerID": -1,
+                    "baseLayerMD5": "1879b07cfe788b0258afada17aa46973.svg",
+                    "bitmapResolution": 1,
+                    "rotationCenterX": 59,
+                    "rotationCenterY": 52
+                },
+                {
+                    "costumeName": "霸王龙-d",
+                    "baseLayerID": -1,
+                    "baseLayerMD5": "52c17657698ab82881ed3ccf83080684.svg",
+                    "bitmapResolution": 1,
+                    "rotationCenterX": 89,
+                    "rotationCenterY": 88
+                }
+            ],
+            "currentCostumeIndex": 0,
+            "scratchX": 128,
+            "scratchY": -19,
+            "scale": 1,
+            "direction": 90,
+            "rotationStyle": "normal",
+            "isDraggable": false,
+            "visible": true,
+            "spriteInfo": {}
+        }
+    },
+    {
+        "name": "翼龙",
+        "md5": "c4867c44f38df5bde472844878d5beea.svg",
+        "type": "sprite",
+        "tags": [
+            "animals",
+            "dinosaur",
+            "pteranodon",
+            "flying",
+            "alex eben meyer"
+        ],
+        "info": [
+            0,
+            5,
+            1
+        ],
+        "json": {
+            "objName": "翼龙",
+            "sounds": [
+                {
+                    "soundName": "pop",
+                    "soundID": -1,
+                    "md5": "83a9787d4cb6f3b7632b4ddfebf74367.wav",
+                    "sampleCount": 258,
+                    "rate": 11025,
+                    "format": ""
+                }
+            ],
+            "costumes": [
+                {
+                    "costumeName": "翼龙-a",
+                    "baseLayerID": -1,
+                    "baseLayerMD5": "c4867c44f38df5bde472844878d5beea.svg",
+                    "bitmapResolution": 1,
+                    "rotationCenterX": 113,
+                    "rotationCenterY": 42
+                },
+                {
+                    "costumeName": "翼龙-b",
+                    "baseLayerID": -1,
+                    "baseLayerMD5": "b682c1e58ea1c6bea737670f57517b6f.svg",
+                    "bitmapResolution": 1,
+                    "rotationCenterX": 113,
+                    "rotationCenterY": 59
+                },
+                {
+                    "costumeName": "翼龙-c",
+                    "baseLayerID": -1,
+                    "baseLayerMD5": "47a617ca48f4782efeeb60199cff801e.svg",
+                    "bitmapResolution": 1,
+                    "rotationCenterX": 47,
+                    "rotationCenterY": 59
+                },
+                {
+                    "costumeName": "翼龙-d",
+                    "baseLayerID": -1,
+                    "baseLayerMD5": "710ff3380d6872b04785db97dc0565c6.svg",
+                    "bitmapResolution": 1,
+                    "rotationCenterX": 113,
+                    "rotationCenterY": 65
+                },
+                {
+                    "costumeName": "翼龙-e",
+                    "baseLayerID": -1,
+                    "baseLayerMD5": "6f40025c1157f37858adf7fa85090e64.svg",
+                    "bitmapResolution": 1,
+                    "rotationCenterX": 41,
+                    "rotationCenterY": 40
+                }
+            ],
+            "currentCostumeIndex": 0,
+            "scratchX": -76,
+            "scratchY": 101,
+            "scale": 1,
+            "direction": 90,
+            "rotationStyle": "normal",
+            "isDraggable": false,
+            "visible": true,
+            "spriteInfo": {}
+        }
+    },
+    {
+        "name": "长颈龙",
+        "md5": "e70ab4de006f3df64e776abf912a62be.svg",
+        "type": "sprite",
+        "tags": [
+            "animals",
+            "dinosaur",
+            "alex eben meyer"
+        ],
+        "info": [
+            0,
+            4,
+            1
+        ],
+        "json": {
+            "objName": "长颈龙",
+            "sounds": [
+                {
+                    "soundName": "pop",
+                    "soundID": -1,
+                    "md5": "83a9787d4cb6f3b7632b4ddfebf74367.wav",
+                    "sampleCount": 258,
+                    "rate": 11025,
+                    "format": ""
+                }
+            ],
+            "costumes": [
+                {
+                    "costumeName": "长颈龙-a",
+                    "baseLayerID": -1,
+                    "baseLayerMD5": "e70ab4de006f3df64e776abf912a62be.svg",
+                    "bitmapResolution": 1,
+                    "rotationCenterX": 98,
+                    "rotationCenterY": 92
+                },
+                {
+                    "costumeName": "长颈龙-b",
+                    "baseLayerID": -1,
+                    "baseLayerMD5": "af2d8211a65dce9871d49fa70671ce0c.svg",
+                    "bitmapResolution": 1,
+                    "rotationCenterX": 98,
+                    "rotationCenterY": 47
+                },
+                {
+                    "costumeName": "长颈龙-c",
+                    "baseLayerID": -1,
+                    "baseLayerMD5": "a2bb28d5ba55ba997bec63772437cecf.svg",
+                    "bitmapResolution": 1,
+                    "rotationCenterX": 81,
+                    "rotationCenterY": 91
+                },
+                {
+                    "costumeName": "长颈龙-d",
+                    "baseLayerID": -1,
+                    "baseLayerMD5": "91f3dba45e8cec7bdff31ed5acde2c85.svg",
+                    "bitmapResolution": 1,
+                    "rotationCenterX": 99,
+                    "rotationCenterY": 91
+                }
+            ],
+            "currentCostumeIndex": 0,
+            "scratchX": -138,
+            "scratchY": -51,
+            "scale": 1,
+            "direction": 90,
+            "rotationStyle": "normal",
+            "isDraggable": false,
+            "visible": true,
+            "spriteInfo": {}
+        }
+    },
+    {
         "name": "虎鲸",
         "md5": "ba1946c806764f2f884ce561c65d2183.svg",
         "type": "sprite",
@@ -5446,304 +5744,6 @@
             "currentCostumeIndex": 0,
             "scratchX": 82,
             "scratchY": -18,
-            "scale": 1,
-            "direction": 90,
-            "rotationStyle": "normal",
-            "isDraggable": false,
-            "visible": true,
-            "spriteInfo": {}
-        }
-    },
-    {
-        "name": "Dinosaur1",
-        "md5": "e70ab4de006f3df64e776abf912a62be.svg",
-        "type": "sprite",
-        "tags": [
-            "animals",
-            "dinosaur",
-            "alex eben meyer"
-        ],
-        "info": [
-            0,
-            4,
-            1
-        ],
-        "json": {
-            "objName": "Dinosaur1",
-            "sounds": [
-                {
-                    "soundName": "pop",
-                    "soundID": -1,
-                    "md5": "83a9787d4cb6f3b7632b4ddfebf74367.wav",
-                    "sampleCount": 258,
-                    "rate": 11025,
-                    "format": ""
-                }
-            ],
-            "costumes": [
-                {
-                    "costumeName": "dinosaur1-a",
-                    "baseLayerID": -1,
-                    "baseLayerMD5": "e70ab4de006f3df64e776abf912a62be.svg",
-                    "bitmapResolution": 1,
-                    "rotationCenterX": 98,
-                    "rotationCenterY": 92
-                },
-                {
-                    "costumeName": "dinosaur1-b",
-                    "baseLayerID": -1,
-                    "baseLayerMD5": "af2d8211a65dce9871d49fa70671ce0c.svg",
-                    "bitmapResolution": 1,
-                    "rotationCenterX": 98,
-                    "rotationCenterY": 47
-                },
-                {
-                    "costumeName": "dinosaur1-c",
-                    "baseLayerID": -1,
-                    "baseLayerMD5": "a2bb28d5ba55ba997bec63772437cecf.svg",
-                    "bitmapResolution": 1,
-                    "rotationCenterX": 81,
-                    "rotationCenterY": 91
-                },
-                {
-                    "costumeName": "dinosaur1-d",
-                    "baseLayerID": -1,
-                    "baseLayerMD5": "91f3dba45e8cec7bdff31ed5acde2c85.svg",
-                    "bitmapResolution": 1,
-                    "rotationCenterX": 99,
-                    "rotationCenterY": 91
-                }
-            ],
-            "currentCostumeIndex": 0,
-            "scratchX": -138,
-            "scratchY": -51,
-            "scale": 1,
-            "direction": 90,
-            "rotationStyle": "normal",
-            "isDraggable": false,
-            "visible": true,
-            "spriteInfo": {}
-        }
-    },
-    {
-        "name": "Dinosaur2",
-        "md5": "f49719e8f2440f5d328f2604e97eb71d.svg",
-        "type": "sprite",
-        "tags": [
-            "animals",
-            "dinosaur",
-            "triceratops",
-            "alex eben meyer"
-        ],
-        "info": [
-            0,
-            4,
-            1
-        ],
-        "json": {
-            "objName": "Dinosaur2",
-            "sounds": [
-                {
-                    "soundName": "pop",
-                    "soundID": -1,
-                    "md5": "83a9787d4cb6f3b7632b4ddfebf74367.wav",
-                    "sampleCount": 258,
-                    "rate": 11025,
-                    "format": ""
-                }
-            ],
-            "costumes": [
-                {
-                    "costumeName": "dinosaur2-a",
-                    "baseLayerID": -1,
-                    "baseLayerMD5": "f49719e8f2440f5d328f2604e97eb71d.svg",
-                    "bitmapResolution": 1,
-                    "rotationCenterX": 63,
-                    "rotationCenterY": 67
-                },
-                {
-                    "costumeName": "dinosaur2-b",
-                    "baseLayerID": -1,
-                    "baseLayerMD5": "1af6b3af3bf2cda862bbe01034a336bb.svg",
-                    "bitmapResolution": 1,
-                    "rotationCenterX": 76,
-                    "rotationCenterY": 67
-                },
-                {
-                    "costumeName": "dinosaur2-c",
-                    "baseLayerID": -1,
-                    "baseLayerMD5": "e83b30a4517bbe155e2b4a6367c8f70b.svg",
-                    "bitmapResolution": 1,
-                    "rotationCenterX": 64,
-                    "rotationCenterY": 67
-                },
-                {
-                    "costumeName": "dinosaur2-d",
-                    "baseLayerID": -1,
-                    "baseLayerMD5": "8244f1fb159237179d1caaa69c070060.svg",
-                    "bitmapResolution": 1,
-                    "rotationCenterX": 73,
-                    "rotationCenterY": 67
-                }
-            ],
-            "currentCostumeIndex": 0,
-            "scratchX": 10,
-            "scratchY": 26,
-            "scale": 1,
-            "direction": 90,
-            "rotationStyle": "normal",
-            "isDraggable": false,
-            "visible": true,
-            "spriteInfo": {}
-        }
-    },
-    {
-        "name": "Dinosaur3",
-        "md5": "c4867c44f38df5bde472844878d5beea.svg",
-        "type": "sprite",
-        "tags": [
-            "animals",
-            "dinosaur",
-            "pteranodon",
-            "flying",
-            "alex eben meyer"
-        ],
-        "info": [
-            0,
-            5,
-            1
-        ],
-        "json": {
-            "objName": "Dinosaur3",
-            "sounds": [
-                {
-                    "soundName": "pop",
-                    "soundID": -1,
-                    "md5": "83a9787d4cb6f3b7632b4ddfebf74367.wav",
-                    "sampleCount": 258,
-                    "rate": 11025,
-                    "format": ""
-                }
-            ],
-            "costumes": [
-                {
-                    "costumeName": "dinosaur3-a",
-                    "baseLayerID": -1,
-                    "baseLayerMD5": "c4867c44f38df5bde472844878d5beea.svg",
-                    "bitmapResolution": 1,
-                    "rotationCenterX": 113,
-                    "rotationCenterY": 42
-                },
-                {
-                    "costumeName": "dinosaur3-b",
-                    "baseLayerID": -1,
-                    "baseLayerMD5": "b682c1e58ea1c6bea737670f57517b6f.svg",
-                    "bitmapResolution": 1,
-                    "rotationCenterX": 113,
-                    "rotationCenterY": 59
-                },
-                {
-                    "costumeName": "dinosaur3-c",
-                    "baseLayerID": -1,
-                    "baseLayerMD5": "47a617ca48f4782efeeb60199cff801e.svg",
-                    "bitmapResolution": 1,
-                    "rotationCenterX": 47,
-                    "rotationCenterY": 59
-                },
-                {
-                    "costumeName": "dinosaur3-d",
-                    "baseLayerID": -1,
-                    "baseLayerMD5": "710ff3380d6872b04785db97dc0565c6.svg",
-                    "bitmapResolution": 1,
-                    "rotationCenterX": 113,
-                    "rotationCenterY": 65
-                },
-                {
-                    "costumeName": "dinosaur3-e",
-                    "baseLayerID": -1,
-                    "baseLayerMD5": "6f40025c1157f37858adf7fa85090e64.svg",
-                    "bitmapResolution": 1,
-                    "rotationCenterX": 41,
-                    "rotationCenterY": 40
-                }
-            ],
-            "currentCostumeIndex": 0,
-            "scratchX": -76,
-            "scratchY": 101,
-            "scale": 1,
-            "direction": 90,
-            "rotationStyle": "normal",
-            "isDraggable": false,
-            "visible": true,
-            "spriteInfo": {}
-        }
-    },
-    {
-        "name": "Dinosaur4",
-        "md5": "d87b5e3c45f5d234c7aa47107c788f18.svg",
-        "type": "sprite",
-        "tags": [
-            "animals",
-            "dinosaur",
-            "tyrannosaurus",
-            "t-rex",
-            "trex",
-            "alex eben meyer"
-        ],
-        "info": [
-            0,
-            4,
-            1
-        ],
-        "json": {
-            "objName": "Dinosaur4",
-            "sounds": [
-                {
-                    "soundName": "pop",
-                    "soundID": -1,
-                    "md5": "83a9787d4cb6f3b7632b4ddfebf74367.wav",
-                    "sampleCount": 258,
-                    "rate": 11025,
-                    "format": ""
-                }
-            ],
-            "costumes": [
-                {
-                    "costumeName": "dinosaur4-a",
-                    "baseLayerID": 0,
-                    "baseLayerMD5": "d87b5e3c45f5d234c7aa47107c788f18.svg",
-                    "bitmapResolution": 1,
-                    "rotationCenterX": 60,
-                    "rotationCenterY": 52
-                },
-                {
-                    "costumeName": "dinosaur4-b",
-                    "baseLayerID": -1,
-                    "baseLayerMD5": "cfe906702bbd30bc3bb8acb53079b6b0.svg",
-                    "bitmapResolution": 1,
-                    "rotationCenterX": 87,
-                    "rotationCenterY": 52
-                },
-                {
-                    "costumeName": "dinosaur4-c",
-                    "baseLayerID": -1,
-                    "baseLayerMD5": "1879b07cfe788b0258afada17aa46973.svg",
-                    "bitmapResolution": 1,
-                    "rotationCenterX": 59,
-                    "rotationCenterY": 52
-                },
-                {
-                    "costumeName": "dinosaur4-d",
-                    "baseLayerID": -1,
-                    "baseLayerMD5": "52c17657698ab82881ed3ccf83080684.svg",
-                    "bitmapResolution": 1,
-                    "rotationCenterX": 89,
-                    "rotationCenterY": 88
-                }
-            ],
-            "currentCostumeIndex": 0,
-            "scratchX": 128,
-            "scratchY": -19,
             "scale": 1,
             "direction": 90,
             "rotationStyle": "normal",
