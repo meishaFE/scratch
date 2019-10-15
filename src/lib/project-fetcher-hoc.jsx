@@ -81,7 +81,6 @@ const ProjectFetcherHOC = function (WrappedComponent) {
                 })
                 .catch(err => {
                     this.props.onError(err);
-                    log.error(err);
                 });
         }
         render () {
