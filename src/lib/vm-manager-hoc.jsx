@@ -78,13 +78,12 @@ const vmManagerHOC = function (WrappedComponent) {
                 }
             } catch (err) {
                 this.props.onLoadError(err);
-                
-                await this.props.vm.loadProject(this.props.projectData);
+                /* await this.props.vm.loadProject(this.props.projectData);
                 this.props.onLoadedProject(this.props.loadingState, this.props.canSave);
                 setTimeout(() => this.props.onSetProjectUnchanged());
                 if (!this.props.isStarted) {
                     setTimeout(() => this.props.vm.renderer.draw());
-                }
+                } */
             }
         }
         render () {
