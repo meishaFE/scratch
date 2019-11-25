@@ -54,7 +54,7 @@ class LibraryItemComponent extends React.PureComponent {
                         classNames(styles.featuredExtensionText, styles.featuredText) : styles.featuredText
                     }
                 >
-                    <span className={styles.libraryItemName}>{this.props.name}</span>
+                    <span className={styles.libraryItemName} title={this.props.name}>{this.props.name}</span>
                     <br />
                     <span className={styles.featuredDescription}>{this.props.description}</span>
                 </div>
@@ -133,7 +133,7 @@ class LibraryItemComponent extends React.PureComponent {
                         />
                     </Box>
                 </Box>
-                <span className={styles.libraryItemName}>{this.props.name}</span>
+                <span className={styles.libraryItemName} title={this.props.name}>{this.props.name}</span>
                 {this.props.showPlayButton ? (
                     <PlayButton
                         isPlaying={this.props.isPlaying}
