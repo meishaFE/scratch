@@ -61,15 +61,14 @@ ListMonitor.propTypes = {
     onActivate: PropTypes.func,
     onAdd: PropTypes.func,
     onResizeMouseDown: PropTypes.func,
-    // mscode修改
-    /* value: PropTypes.oneOfType([
+    value: PropTypes.oneOfType([
         PropTypes.string,
         PropTypes.number,
         PropTypes.arrayOf(PropTypes.oneOfType([
             PropTypes.string,
             PropTypes.number
         ]))
-    ]), */
+    ]),
     width: PropTypes.number
 };
 

@@ -54,8 +54,7 @@ class Storage extends ScratchStorage {
         this.assetHost = assetHost;
     }
     getAssetGetConfig (asset) {
-        // mscode修改
-        return `${this.assetHost}/mscode/assets/${asset.assetId}.${asset.dataFormat}`;
+        return `${this.assetHost}/internalapi/asset/${asset.assetId}.${asset.dataFormat}/get/`;
     }
     getAssetCreateConfig (asset) {
         return {

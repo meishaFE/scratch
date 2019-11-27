@@ -7,8 +7,7 @@
 }
 
 .body-wrapper {
-    /* mscode修改 */
-    height: calc(100% - 76px);
+    height: calc(100% - $menu-bar-height);
     background-color: $ui-primary;
 }
 
