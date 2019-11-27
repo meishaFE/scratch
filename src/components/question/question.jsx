@@ -21,6 +21,7 @@ const QuestionComponent = props => {
                 ) : null}
                 <div className={styles.questionInput}>
                     <Input
+                        className={styles.qInput}
                         autoFocus
                         value={answer}
                         onChange={onChange}

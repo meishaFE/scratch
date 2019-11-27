@@ -20,7 +20,7 @@ const QuestionComponent = props => {
                     <div className={styles.questionLabel}>{question}</div>
                 ) : null}
                 <div className={styles.questionInput}>
-                    {/* mscode修改 */}
+                    {/* mscode修改 增加 class */}
                     <Input
                         className={styles.qInput}
                         autoFocus

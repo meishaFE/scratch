@@ -19,7 +19,8 @@ class Modal extends React.Component {
     componentDidMount () {
         // Add a history event only if it's not currently for our modal. This
         // avoids polluting the history with many entries. We only need one.
-        this.pushHistory(this.id, (history.state === null || history.state !== this.id));
+        // mscode修改
+        // this.pushHistory(this.id, (history.state === null || history.state !== this.id));
     }
     componentWillUnmount () {
         this.removeEventListeners();

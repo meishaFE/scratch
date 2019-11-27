@@ -2,20 +2,20 @@
 @import "../../css/colors.css";
 
 .question-container {
-    margin: $space;
+    margin: 7px;
     border: 1px solid $ui-black-transparent;
-    border-radius: $space;
+    border-radius: 8px;
     border-width: 2px;
-    padding: 1rem;
+    padding: 10px;
     background: white;
 }
 
 .question-label {
-    font-size: 0.75rem;
+    font-size: 12px;
     font-weight: bold;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: $text-primary;
-    padding-bottom: $space;
+    padding-bottom: 7px;
 }
 
 .question-input {
@@ -25,24 +25,17 @@
 
 .question-submit-button {
     position: absolute;
-    top: calc($space / 2);
+    top: 6px;
+    right: 5px;
 
-    width: calc(2rem - $space);
-    height: calc(2rem - $space);
+    width: 20px;
+    height: 20px;
 
     border: none;
     border-radius: 100%;
 
     color: white;
     background: $motion-primary;
-}
-
-[dir="ltr"] .question-submit-button {
-    right: calc($space / 2);
-}
-
-[dir="rtl"] .question-submit-button {
-    left: calc($space / 2);
 }
 
 /* Input overrides: width, font-weight, focus outline and padding */
@@ -52,11 +45,11 @@
 }
 
 [dir="ltr"] .question-input > input {
-    padding: 0 2rem 0 .75rem; /* To make room for the submit button */
+    padding: 0 28px 0 10px; /* To make room for the submit button */
 }
 
 [dir="rtl"] .question-input > input {
-    padding: 0 .75rem 0 2rem; /* To make room for the submit button */
+    padding: 0 10px 0 28px; /* To make room for the submit button */
 }
 
 .question-input > input:focus {
@@ -64,9 +57,29 @@
 }
 
 .question-submit-button-icon {
-    width: calc(2rem - $space);
-    height: calc(2rem - $space);
+    width: 20px;
+    height: 20px;
     position: relative;
     right: -7px;
     left: -7px;
+}
+
+.qInput {
+    height: 32px;
+    padding: 0 30px 0 10px;
+    font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: #575e75;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: 16px;
+    outline: none;
+    cursor: text;
+    transition: .25s ease-out;
+    box-shadow: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    min-width: 0;
+    user-select: auto !important;
 }

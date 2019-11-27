@@ -11,4 +11,4 @@ GoogleAnalytics.initialize(process.env.GA_ID || window.GA_ID, {
 export default {
     pageview() {},
     event() {}
-  };
+};

@@ -26,6 +26,7 @@ const HashParserHOC = function (WrappedComponent) {
             // window.addEventListener('hashchange', this.handleHashChange);
             this.handleHashChange();
         }
+
         // mscode修改
         /* componentDidUpdate (prevProps) {
             // if we are newly fetching a non-hash project...
@@ -38,6 +39,7 @@ const HashParserHOC = function (WrappedComponent) {
         componentWillUnmount () {
             window.removeEventListener('hashchange', this.handleHashChange);
         } */
+
         handleHashChange () {
             const hashMatch = window.location.hash.match(/#(\d+)/);
             const hashProjectId = hashMatch === null ? defaultProjectId : hashMatch[1];

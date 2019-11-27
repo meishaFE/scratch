@@ -83,6 +83,11 @@ const AppStateHOC = function (WrappedComponent, localesOnly) {
                 initialState,
                 enhancer
             );
+
+            // mscode修改
+            // 将store暴露到全局
+            window.scratchStore = this.store;
+            props.onInitStore();
         }
         componentDidUpdate (prevProps) {
             if (localesOnly) return;
@@ -98,6 +103,10 @@ const AppStateHOC = function (WrappedComponent, localesOnly) {
                 isFullScreen, // eslint-disable-line no-unused-vars
                 isPlayerOnly, // eslint-disable-line no-unused-vars
                 showTelemetryModal, // eslint-disable-line no-unused-vars
+
+                // mscode修改
+                onInitStore,
+
                 ...componentProps
             } = this.props;
             return (
