@@ -3,14 +3,15 @@
 ```javascript
 {
   "@babel/plugin-proposal-class-properties": "^7.5.0",
+  "clean-webpack-plugin": "^3.0.0",
   "friendly-errors-webpack-plugin": "^1.7.0",
+  "gulp": "^4.0.2",
   "less": "^3.9.0",
   "less-loader": "^5.0.0",
   "mini-css-extract-plugin": "^0.7.0",
   "optimize-css-assets-webpack-plugin": "^5.0.3",
   "url-loader": "^2.0.1",
-  "clean-webpack-plugin": "^3.0.0",
-  "gulp": "^4.0.2",
+  "webpack-merge": "^4.2.1"
 }
 ```
 
@@ -27,9 +28,11 @@
 - `components/monitor/monitor.css` 修改样式
 - `components/question/question.jsx`
 - `components/question/question.css` 修改样式
+- `components/spinner/spinner.css` 修改样式
 
 - `lib/default-project` 修改默认项目（替换文件夹下的文件）
 - `lib/libraries` 增加素材
+- `lib/libraries/decks/index.jsx` 去除教程素材配置
 - `lib/analytice.js` 去除 react-ga
 - `lib/app-state-hoc.jsx` 将 store 暴露到全局
 - `lib/hash-parser-hoc.jsx` 去除 hash 部分

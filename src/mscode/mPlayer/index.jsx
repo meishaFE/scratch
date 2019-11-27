@@ -10,6 +10,8 @@ import { Provider } from 'react-redux';
 import redux from './store';
 import Spin from '../Spin';
 import Question from '@/containers/question.jsx';
+import textProBase64 from './textProject';
+import { Base64ToBlob, readAsArrayBuffer } from '../utils/base64';
 
 const ratio = 0.75;
 let submiting = false;
@@ -54,6 +56,8 @@ class MPlayer extends Component {
       this.setState({ monitors });
     });
     this.playerVm.vm.runtime.addListener('QUESTION', this.questionListener);
+
+    this.loadTextProject();
   }
 
   componentWillUpdate() {
@@ -81,6 +85,16 @@ class MPlayer extends Component {
     });
   };
 
+  // 先载入带文字的项目，修复自定义字体无法显示问题
+  loadTextProject = async () => {
+    try {
+      const fileBlob = await Base64ToBlob(textProBase64);
+      const fileArrayBuffer = await readAsArrayBuffer(fileBlob);
+      this.playerVm.vm.clear();
+      await this.playerVm.vm.loadProject(fileArrayBuffer);
+    } catch (err) {}
+  };
+
   // 加载项目
   loadProject = async () => {
     if (submiting) return;
@@ -95,7 +109,9 @@ class MPlayer extends Component {
       // 开始游戏
       this.playerVm.vm.greenFlag();
       this.setState({ isPlay: true, isLoadProject: true });
-      document.addEventListener('touchmove', preventTouchMove, { passive: false });
+      document.addEventListener('touchmove', preventTouchMove, {
+        passive: false
+      });
     } catch (err) {
       console.log(err);
       $utils.errMsg(err);
@@ -109,7 +125,9 @@ class MPlayer extends Component {
     if (this.state.isLoadProject) {
       this.playerVm.vm.greenFlag();
       this.setState({ isPlay: true });
-      document.addEventListener('touchmove', preventTouchMove, { passive: false });
+      document.addEventListener('touchmove', preventTouchMove, {
+        passive: false
+      });
     } else {
       this.loadProject();
     }
@@ -190,14 +208,21 @@ class MPlayer extends Component {
       question
     } = this.state;
 
-    this.playerVm.canvas.style.cssText = Style.string({ width: stageSize.width, height: stageSize.height });
+    this.playerVm.canvas.style.cssText = Style.string({
+      width: stageSize.width,
+      height: stageSize.height
+    });
 
     return (
       <Provider store={redux}>
         <div className={isPlay ? styles.fullscreen : styles.container}>
           <Spin spinning={loading} style={{ overflow: 'hidden' }}>
             <div className={styles.playerContainer} style={isPlay ? playerConStyle : {}}>
-              <div className={styles.canvasCon} ref={this.setCanvasRef} style={isPlay ? canvasConStyle : {}}>
+              <div
+                className={styles.canvasCon}
+                ref={this.setCanvasRef}
+                style={isPlay ? canvasConStyle : {}}
+              >
                 <ConnectedIntlProvider>
                   <React.Fragment>
                     <MonitorList
@@ -209,7 +234,10 @@ class MPlayer extends Component {
 
                     {question === null ? null : (
                       <div className={styles.questionWrapper}>
-                        <Question question={question} onQuestionAnswered={this.handleQuestionAnswered} />
+                        <Question
+                          question={question}
+                          onQuestionAnswered={this.handleQuestionAnswered}
+                        />
                       </div>
                     )}
                   </React.Fragment>
@@ -217,7 +245,10 @@ class MPlayer extends Component {
 
                 {!isPlay && (
                   <React.Fragment>
-                    <div className={styles.projectImg} style={{ backgroundImage: `url(${data._coverUrl})` }} />
+                    <div
+                      className={styles.projectImg}
+                      style={{ backgroundImage: `url(${data._coverUrl})` }}
+                    />
                     <div className={styles.playBtn}>
                       <img src={imgPlayBtn} onClick={this.playGame} />
                     </div>
@@ -227,11 +258,19 @@ class MPlayer extends Component {
 
               <div className={styles.btnRow}>
                 <div className={styles.btnCon} style={{ width: `${stageSize.width}px` }}>
-                  <svg className={`${styles.startBtn} icon`} aria-hidden="true" onClick={this.playGame}>
+                  <svg
+                    className={`${styles.startBtn} icon`}
+                    aria-hidden="true"
+                    onClick={this.playGame}
+                  >
                     <use xlinkHref="#icon_detail_flagx" />
                   </svg>
 
-                  <svg className={`${styles.stopBtn} icon`} aria-hidden="true" onClick={this.stopGame}>
+                  <svg
+                    className={`${styles.stopBtn} icon`}
+                    aria-hidden="true"
+                    onClick={this.stopGame}
+                  >
                     <use xlinkHref="#icon_detail_stopx" />
                   </svg>
                 </div>
