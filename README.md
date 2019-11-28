@@ -75,3 +75,7 @@
 错误地址：`node_modules/scratch-render/src/SVGSkin.js` getImageData
 
 解决：升级版本后修复，待观察
+
+# change log
+
+2019.11.27 更新 scratch

@@ -13,6 +13,7 @@ import Question from '@/containers/question.jsx';
 import textProBase64 from './textProject';
 import { Base64ToBlob, readAsArrayBuffer } from '../utils/base64';
 
+const screenHeight = window.innerHeight;
 const ratio = 0.75;
 let submiting = false;
 
@@ -215,7 +216,10 @@ class MPlayer extends Component {
 
     return (
       <Provider store={redux}>
-        <div className={isPlay ? styles.fullscreen : styles.container}>
+        <div
+          className={isPlay ? styles.fullscreen : styles.container}
+          style={isPlay ? { height: screenHeight } : null}
+        >
           <Spin spinning={loading} style={{ overflow: 'hidden' }}>
             <div className={styles.playerContainer} style={isPlay ? playerConStyle : {}}>
               <div
