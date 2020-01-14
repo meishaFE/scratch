@@ -1,4 +1,3 @@
-import './mscode/icon/iconfont';
 import 'intl';
 import { compose } from 'redux';
 import GUI from './containers/gui.jsx';

@@ -262,21 +262,19 @@ class MPlayer extends Component {
 
               <div className={styles.btnRow}>
                 <div className={styles.btnCon} style={{ width: `${stageSize.width}px` }}>
-                  <svg
-                    className={`${styles.startBtn} icon`}
-                    aria-hidden="true"
+                  <img
+                    className={styles.startBtn}
+                    src={require('../images/icon_start.svg')}
+                    alt=""
                     onClick={this.playGame}
-                  >
-                    <use xlinkHref="#icon_detail_flagx" />
-                  </svg>
+                  />
 
-                  <svg
-                    className={`${styles.stopBtn} icon`}
-                    aria-hidden="true"
+                  <img
+                    className={styles.stopBtn}
+                    src={require('../images/icon_stop.svg')}
+                    alt=""
                     onClick={this.stopGame}
-                  >
-                    <use xlinkHref="#icon_detail_stopx" />
-                  </svg>
+                  />
                 </div>
               </div>
             </div>

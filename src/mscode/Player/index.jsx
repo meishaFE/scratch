@@ -158,7 +158,10 @@ class Player extends Component {
     const { loading, fullscreen, stageSize, isLoadProject, monitors, question } = this.state;
 
     if (this.playerVm) {
-      this.playerVm.canvas.style.cssText = Style.string({ width: stageSize.width, height: stageSize.height });
+      this.playerVm.canvas.style.cssText = Style.string({
+        width: stageSize.width,
+        height: stageSize.height
+      });
     }
 
     return (
@@ -184,7 +187,10 @@ class Player extends Component {
 
                   {question === null ? null : (
                     <div className={styles.questionWrapper}>
-                      <Question question={question} onQuestionAnswered={this.handleQuestionAnswered} />
+                      <Question
+                        question={question}
+                        onQuestionAnswered={this.handleQuestionAnswered}
+                      />
                     </div>
                   )}
                 </React.Fragment>
@@ -192,7 +198,10 @@ class Player extends Component {
 
               {!isLoadProject && (
                 <React.Fragment>
-                  <div className={styles.projectImg} style={{ backgroundImage: `url(${data._coverUrl})` }} />
+                  <div
+                    className={styles.projectImg}
+                    style={{ backgroundImage: `url(${data._coverUrl})` }}
+                  />
                   <div className={styles.playBtn}>
                     <div className={styles.playBtnCon}>
                       <img
@@ -214,17 +223,26 @@ class Player extends Component {
             {/* 按钮 */}
             <div className={styles.btnRow}>
               <div className={styles.btnCon} style={{ width: `${stageSize.width}px` }}>
-                <svg className={`${styles.fullscreenBtn} icon`} aria-hidden="true" onClick={this.handleFullscreen}>
-                  <use xlinkHref="#icon_detail_full-scr" />
-                </svg>
+                <img
+                  className={styles.fullscreenBtn}
+                  src={require('../images/icon_fullscreen.svg')}
+                  alt=""
+                  onClick={this.handleFullscreen}
+                />
 
-                <svg className={`${styles.startBtn} icon`} aria-hidden="true" onClick={this.playGame}>
-                  <use xlinkHref="#icon_detail_flagx" />
-                </svg>
+                <img
+                  className={styles.startBtn}
+                  src={require('../images/icon_start.svg')}
+                  alt=""
+                  onClick={this.playGame}
+                />
 
-                <svg className={`${styles.stopBtn} icon`} aria-hidden="true" onClick={this.stopGame}>
-                  <use xlinkHref="#icon_detail_stopx" />
-                </svg>
+                <img
+                  className={styles.stopBtn}
+                  src={require('../images/icon_stop.svg')}
+                  alt=""
+                  onClick={this.stopGame}
+                />
               </div>
             </div>
           </Spin>
